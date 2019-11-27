@@ -9,19 +9,19 @@
  * @author brktrksvr
  */
 public class Car extends Vehicle {
-    protected int horsePower;
-    protected String licensePlate;
-    protected String tireModel;
-    protected String color;
-    protected double topSpeed;
+    private int horsePower;
+    private String licensePlate;
+    private String tireModel;
+    private String color;
+    private double topSpeed;
 
     public Car() {
     }
 
     
     public Car(int horsePower, String licensePlate, String tireModel, String color, double topSpeed, 
-            String name, double price, String listingDate, int modelYear, String model) {
-        super(name, price, listingDate, modelYear, model);
+            String name, double price, String listingDate, int modelYear, String model, String type) {
+        super(name, price, listingDate, modelYear, model, type);
         this.horsePower = horsePower;
         this.licensePlate = licensePlate;
         this.tireModel = tireModel;

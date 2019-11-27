@@ -10,22 +10,24 @@
  */
 
 public abstract class Vehicle {
-    protected int listingId = 0;
-    protected String name; 
-    protected double price;
-    protected String listingDate;
-    protected int modelYear;
-    protected String model;
+    private int listingId = 0;
+    private String name; 
+    private double price;
+    private String listingDate;
+    private int modelYear;
+    private String model;
+    private String type;
     
     public Vehicle() {
     }
 
-    public Vehicle(String name, double price, String listingDate, int modelYear, String model) {
+    public Vehicle(String name, double price, String listingDate, int modelYear, String model, String type) {
         this.name = name;
         this.price = price;
         this.listingDate = listingDate;
         this.modelYear = modelYear;
         this.model = model;
+        this.type = type;
         listingId++;
     }
 

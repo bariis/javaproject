@@ -9,19 +9,19 @@
  * @author brktrksvr
  */
 public class Boat extends Vehicle{
-    protected double length;
-    protected double width;
-    protected String flag;
-    protected String engineType;
-    protected int cabinCount;
-    protected int bathroomCount;
+    private double length;
+    private double width;
+    private String flag;
+    private String engineType;
+    private int cabinCount;
+    private int bathroomCount;
 
     public Boat() {
     }
 
     public Boat(double length, double width, String flag, String engineType, 
-            int cabinCount, int bathroomCount, String name, double price, String listingDate, int modelYear, String model) {
-        super(name, price, listingDate, modelYear, model);
+            int cabinCount, int bathroomCount, String name, double price, String listingDate, int modelYear, String model, String type) {
+        super(name, price, listingDate, modelYear, model, type);
         this.length = length;
         this.width = width;
         this.flag = flag;
