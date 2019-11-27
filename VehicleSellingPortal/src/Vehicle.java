@@ -15,15 +15,17 @@ public abstract class Vehicle {
     protected double price;
     protected String listingDate;
     protected int modelYear;
-
+    protected String model;
+    
     public Vehicle() {
     }
 
-    public Vehicle(String name, double price, String listingDate, int modelYear) {
+    public Vehicle(String name, double price, String listingDate, int modelYear, String model) {
         this.name = name;
         this.price = price;
         this.listingDate = listingDate;
         this.modelYear = modelYear;
+        this.model = model;
         listingId++;
     }
     

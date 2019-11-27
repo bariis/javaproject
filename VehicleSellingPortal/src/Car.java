@@ -8,7 +8,7 @@
  *
  * @author brktrksvr
  */
-public abstract class Car extends Vehicle {
+public class Car extends Vehicle {
     protected int horsePower;
     protected String licensePlate;
     protected String tireModel;
@@ -19,8 +19,8 @@ public abstract class Car extends Vehicle {
 
     
     public Car(int horsePower, String licensePlate, String tireModel, String color, 
-            String name, double price, String listingDate, int modelYear) {
-        super(name, price, listingDate, modelYear);
+            String name, double price, String listingDate, int modelYear, String model) {
+        super(name, price, listingDate, modelYear, model);
         this.horsePower = horsePower;
         this.licensePlate = licensePlate;
         this.tireModel = tireModel;

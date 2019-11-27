@@ -8,7 +8,7 @@
  *
  * @author brktrksvr
  */
-public abstract class Boat extends Vehicle{
+public class Boat extends Vehicle{
     protected double length;
     protected double width;
     protected String flag;
@@ -19,8 +19,8 @@ public abstract class Boat extends Vehicle{
     }
 
     public Boat(double length, double width, String flag, String engineType, 
-            int cabinCount, String name, double price, String listingDate, int modelYear) {
-        super(name, price, listingDate, modelYear);
+            int cabinCount, String name, double price, String listingDate, int modelYear, String model) {
+        super(name, price, listingDate, modelYear, model);
         this.length = length;
         this.width = width;
         this.flag = flag;
