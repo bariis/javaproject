@@ -26,9 +26,5 @@ public abstract class Vehicle {
         this.modelYear = modelYear;
         listingId++;
     }
-
-
     
-    
-    // COMMIT TEST
 }
