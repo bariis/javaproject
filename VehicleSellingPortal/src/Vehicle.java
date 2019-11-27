@@ -8,6 +8,7 @@
  *
  * @author brktrksvr
  */
+
 public abstract class Vehicle {
     protected int listingId = 0;
     protected String name; 
@@ -27,4 +28,7 @@ public abstract class Vehicle {
     }
 
 
+    
+    
+    // COMMIT TEST
 }
