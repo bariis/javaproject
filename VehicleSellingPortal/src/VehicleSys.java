@@ -26,9 +26,16 @@ public class VehicleSys {
         return false;
     }
     
-    //edit the add
-    public static void addVehicle(Vehicle obj){
-        list.add(obj);
+    // add functional but feels like something is missing
+    // check back later
+    public static boolean addVehicle(Vehicle obj){
+        if(!checkList(obj)){
+            list.add(obj);
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
 
