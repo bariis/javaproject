@@ -74,5 +74,12 @@ public abstract class Vehicle {
     public void setModel(String model) {
         this.model = model;
     }
+
+    @Override
+    // toString will most likely not be used
+    public String toString() {
+        return "\n" + name + "\n" + price + "$" + "\n" + listingDate + "\n" + modelYear +
+                "\n" + model + "\n" + type;
+    }
     
 }
