@@ -1,3 +1,6 @@
+
+package Vehicles;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,13 +13,13 @@
  */
 
 public abstract class Vehicle {
-    private int listingId = 0;
-    private String name; 
-    private double price;
-    private String listingDate;
-    private int modelYear;
-    private String model;
-    private String type;
+    protected int listingId = 0;
+    protected String name; 
+    protected double price;
+    protected String listingDate;
+    protected int modelYear;
+    protected String model;
+    protected String type;
     
     public Vehicle() {
     }
@@ -30,6 +33,9 @@ public abstract class Vehicle {
         this.type = type;
         listingId++;
     }
+    
+    //abstract method. car and motorcycle will treat differently.
+    public abstract double calculateTax();
 
     public int getListingId() {
         return listingId;

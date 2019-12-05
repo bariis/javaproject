@@ -1,3 +1,6 @@
+
+package Vehicles;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -69,5 +72,12 @@ public class Car extends Vehicle {
         this.topSpeed = topSpeed;
     }
     
+    public double calculateTax(){
+       return 2.4;
+    }
+    
+    public String toString(){
+        return "Car" + "\nHorsePower= " + horsePower + "\nLicense Plate= " + licensePlate + "\nTire model= " + tireModel +"\nColor= " + color + "\nTop Speed= " + topSpeed + "\n";
+    }
     
 }
