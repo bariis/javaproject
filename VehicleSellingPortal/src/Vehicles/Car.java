@@ -73,7 +73,16 @@ public class Car extends Vehicle {
     }
     
     public double calculateTax(){
-       return 2.4;
+       
+            if(this.horsePower > 0 && this.horsePower <=  150){
+                return 0.40 * this.price;
+            }
+            else if(this.horsePower > 150 && this.horsePower <= 300){
+                return 0.80 * this.price;
+            }
+            else {
+                return 1.20 * this.price;
+            }
     }
     
     public String toString(){

@@ -80,10 +80,19 @@ public class Boat extends Vehicle{
     public void setBathroomCount(int bathroomCount) {
         this.bathroomCount = bathroomCount;
     }
-
+    
     @Override
-    public double calculateTax() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public double calculateTax(){
+       
+            if(this.flag.equalsIgnoreCase("Turkish")){
+                return 0.10 * this.price;
+            }
+            else if(this.flag.equalsIgnoreCase("American")){
+                return 0.30 * this.price;
+            }
+            else {
+                return 0.20 * this.price;
+            }
     }
     
     

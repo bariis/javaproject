@@ -63,7 +63,15 @@ public class Motorcycle extends Vehicle{
     
     // recalculate the price according to the engine size
     public double calculateTax(){
-            return 2.5;
+            if(this.engineSize > 0 && this.engineSize <=  125){
+                return 0.25 * this.price;
+            }
+            else if(this.engineSize > 125 && this.engineSize <= 250){
+                return 0.50 * this.price;
+            }
+            else {
+                return 0.70 * this.price;
+            }
     }
     
     public String toString(){
