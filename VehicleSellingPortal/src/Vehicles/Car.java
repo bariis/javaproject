@@ -101,10 +101,7 @@ public class Car extends Vehicle implements VehicleInterface{
         else 
             maxCapacity = 4;
         
-        return maxCapacity;
-        
-            
-                
+        return maxCapacity;     
     }
     
     public String toString(){

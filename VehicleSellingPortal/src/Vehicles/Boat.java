@@ -23,7 +23,8 @@ public class Boat extends Vehicle{
     }
 
     public Boat(double length, double width, String flag, String engineType, 
-            int cabinCount, int bathroomCount, String name, double price, String listingDate, int modelYear, String model, String type) {
+            int cabinCount, int bathroomCount, String name, double price, String listingDate, 
+            int modelYear, String model, String type) {
         super(name, price, listingDate, modelYear, model, type);
         this.length = length;
         this.width = width;
