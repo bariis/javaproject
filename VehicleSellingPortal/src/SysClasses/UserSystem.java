@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 
-package Users;
+package SysClasses;
 
+import Users.User;
 import java.util.ArrayList;
 
 /**
@@ -17,17 +18,24 @@ public class UserSystem {
     public static ArrayList<User> usersList = new ArrayList<User>();
     
     // checks if username already exist or not
-    public static boolean checkUser(String userName){
-        for(User user: usersList)
-            if(user.getUsername().compareTo(userName) == 0)
+    public static boolean checkUser(String username){
+        for(User user: usersList){
+            if(user.getUsername().equals(username)){
                 return true;
-        
+            }
+        }
         return false;
     }
     
     // adds user to the arrayList
-     public static void addUser(){
-         
+     public static boolean addUser(User user){
+         if(!checkUser(user.getName())){
+            usersList.add(user);
+            return true;
+        }
+        else {
+            return false;
+        }
      }
     
     
