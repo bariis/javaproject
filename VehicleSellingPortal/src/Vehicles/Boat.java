@@ -95,22 +95,8 @@ public class Boat extends Vehicle{
             }
     }
     
-     public int calculateMaxCapacity(){
-        int maxCapacity = 0;
-        
-        if(model.equalsIgnoreCase("SUV"))
-            maxCapacity = 7;
-        else if(model.equalsIgnoreCase("Sport"))
-            maxCapacity = 2;
-        else if(model.equalsIgnoreCase("Truck"))
-            maxCapacity = 4;
-        else if(model.equalsIgnoreCase("Daily"))
-            maxCapacity = 4;
-        else 
-            maxCapacity = 4;
-        
-        return maxCapacity;
-                   
+    public int calculateMaxCapacity(){
+        return cabinCount * 2;
     }
      
     @Override
