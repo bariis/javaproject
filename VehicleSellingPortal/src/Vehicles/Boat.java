@@ -95,5 +95,16 @@ public class Boat extends Vehicle{
             }
     }
     
+    public int calculateMaxCapacity(){
+        return cabinCount * 2;
+    }
+     
+    @Override
+    public String toString() {
+        return "Boat{" + "length=" + length + ", width=" + width + ", flag=" + flag + ", engineType=" + engineType + ", cabinCount=" + cabinCount + ", bathroomCount=" + bathroomCount + '}';
+    }
+     
+     
+    
     
 }
