@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-12-08T19:35:18.286Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0" etag="--NLKO3Sy4RETupwKJ81" version="12.3.8" type="github" pages="1">
+<mxfile host="www.draw.io" modified="2019-12-08T19:46:47.882Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0" etag="4i-16x1D4iKH8zrdxr9m" version="12.3.8" type="github" pages="1">
   <diagram id="-B1ppT6hz_5FP_6IwFYu" name="Page-1">
     <mxGraphModel dx="1550" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1500" math="0" shadow="0">
       <root>
@@ -25,11 +25,11 @@
         <mxCell id="MA55_t0_zQ04JRDkS3So-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="MA55_t0_zQ04JRDkS3So-5" vertex="1">
           <mxGeometry y="110" width="200" height="8" as="geometry"/>
         </mxCell>
-        <mxCell id="MA55_t0_zQ04JRDkS3So-8" value="+ Car()&#xa;+ Car(int, String, String, String,&#xa;double, String, double, String,&#xa;int, String, String)&#xa;+ Getters &amp; setters&#xa;+ calculateTax(): double &#xa;+ calculateMaxCapacity(): int&#xa;+ toString(): String&#xa; &#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="MA55_t0_zQ04JRDkS3So-5" vertex="1">
+        <mxCell id="MA55_t0_zQ04JRDkS3So-8" value="+ Car()&lt;br&gt;+ Car(int, String, String, String,&lt;br&gt;double, String, double, String,&lt;br&gt;int, String, String)&lt;br&gt;+ Getters &amp;amp; setters&lt;br&gt;+ &lt;i&gt;calculateTax(): double&lt;/i&gt;&lt;br&gt;+ calculateMaxCapacity(): int&lt;br&gt;+ toString(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" parent="MA55_t0_zQ04JRDkS3So-5" vertex="1">
           <mxGeometry y="118" width="200" height="122" as="geometry"/>
         </mxCell>
         <mxCell id="osiSDmEnFBa9YtkusUpC-1" value="Boat" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="291" y="864" width="200" height="154" as="geometry"/>
+          <mxGeometry x="291" y="864" width="200" height="250" as="geometry"/>
         </mxCell>
         <mxCell id="osiSDmEnFBa9YtkusUpC-2" value="- length: double&#xa;- width: double&#xa;- flag: String&#xa;- engineType: String&#xa;- cabinCount: int&#xa;- bathroomCount: int&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="osiSDmEnFBa9YtkusUpC-1" vertex="1">
           <mxGeometry y="26" width="200" height="94" as="geometry"/>
@@ -37,11 +37,11 @@
         <mxCell id="osiSDmEnFBa9YtkusUpC-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="osiSDmEnFBa9YtkusUpC-1" vertex="1">
           <mxGeometry y="120" width="200" height="8" as="geometry"/>
         </mxCell>
-        <mxCell id="osiSDmEnFBa9YtkusUpC-4" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="osiSDmEnFBa9YtkusUpC-1" vertex="1">
-          <mxGeometry y="128" width="200" height="26" as="geometry"/>
+        <mxCell id="osiSDmEnFBa9YtkusUpC-4" value="+ Boat()&lt;br&gt;+ Boat(double, double, String, String&lt;br&gt;int, int, String, double, String, int, &lt;br&gt;String, String)&lt;br&gt;&lt;div&gt;+ Getters &amp;amp; Setters&lt;/div&gt;&lt;div&gt;+ &lt;i&gt;calculateTax(): double&lt;/i&gt;&lt;/div&gt;+ calculateMaxCapacity(): int&lt;br&gt;+ toString(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=0;html=1;" parent="osiSDmEnFBa9YtkusUpC-1" vertex="1">
+          <mxGeometry y="128" width="200" height="122" as="geometry"/>
         </mxCell>
         <mxCell id="osiSDmEnFBa9YtkusUpC-5" value="Motorcycle" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="500" y="864" width="200" height="124" as="geometry">
+          <mxGeometry x="500" y="864" width="200" height="230" as="geometry">
             <mxRectangle x="440" y="634" width="100" height="26" as="alternateBounds"/>
           </mxGeometry>
         </mxCell>
@@ -51,22 +51,22 @@
         <mxCell id="osiSDmEnFBa9YtkusUpC-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="osiSDmEnFBa9YtkusUpC-5" vertex="1">
           <mxGeometry y="90" width="200" height="8" as="geometry"/>
         </mxCell>
-        <mxCell id="osiSDmEnFBa9YtkusUpC-8" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="osiSDmEnFBa9YtkusUpC-5" vertex="1">
-          <mxGeometry y="98" width="200" height="26" as="geometry"/>
+        <mxCell id="osiSDmEnFBa9YtkusUpC-8" value="+ Motorcycle()&lt;br&gt;+ Motorcycle(String, int, double,&lt;br&gt;double, String, double, String, &lt;br&gt;int, String, String)&lt;br&gt;+ Getters &amp;amp; Setters&lt;br&gt;+ &lt;i&gt;calculateTax(): double&lt;/i&gt;&lt;br&gt;+ calculateMaxCapacity(): int&lt;br&gt;+ toString(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" parent="osiSDmEnFBa9YtkusUpC-5" vertex="1">
+          <mxGeometry y="98" width="200" height="132" as="geometry"/>
         </mxCell>
-        <mxCell id="Wsog8xhASZG21VbPrZgl-1" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="osiSDmEnFBa9YtkusUpC-1" edge="1">
+        <mxCell id="Wsog8xhASZG21VbPrZgl-1" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.493;entryY=1.022;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="osiSDmEnFBa9YtkusUpC-1" target="MA55_t0_zQ04JRDkS3So-4" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="311" y="790" as="sourcePoint"/>
             <mxPoint x="400" y="760" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="Wsog8xhASZG21VbPrZgl-2" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="MA55_t0_zQ04JRDkS3So-5" edge="1">
+        <mxCell id="Wsog8xhASZG21VbPrZgl-2" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.172;entryY=1.043;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="MA55_t0_zQ04JRDkS3So-5" edge="1" target="MA55_t0_zQ04JRDkS3So-4">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="211" y="780" as="sourcePoint"/>
             <mxPoint x="290" y="750" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="Wsog8xhASZG21VbPrZgl-3" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="osiSDmEnFBa9YtkusUpC-5" edge="1">
+        <mxCell id="Wsog8xhASZG21VbPrZgl-3" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.869;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="osiSDmEnFBa9YtkusUpC-5" target="MA55_t0_zQ04JRDkS3So-4" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="502" y="864" as="sourcePoint"/>
             <mxPoint x="490" y="760" as="targetPoint"/>
