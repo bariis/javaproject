@@ -1,6 +1,8 @@
 
 package Vehicles;
 
+import VehicleInterface.VehicleInterface;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,7 +13,7 @@ package Vehicles;
  *
  * @author brktrksvr
  */
-public class Car extends Vehicle {
+public class Car extends Vehicle implements VehicleInterface{
     private int horsePower;
     private String licensePlate;
     private String tireModel;
@@ -83,6 +85,26 @@ public class Car extends Vehicle {
             else {
                 return 1.20 * this.price;
             }
+    }
+    
+     public int calculateMaxCapacity(){
+        int maxCapacity;
+        
+        if(model.equalsIgnoreCase("SUV"))
+            maxCapacity = 7;
+        else if(model.equalsIgnoreCase("Sport"))
+            maxCapacity = 2;
+        else if(model.equalsIgnoreCase("Truck"))
+            maxCapacity = 4;
+        else if(model.equalsIgnoreCase("Daily"))
+            maxCapacity = 4;
+        else 
+            maxCapacity = 4;
+        
+        return maxCapacity;
+        
+            
+                
     }
     
     public String toString(){

@@ -95,5 +95,30 @@ public class Boat extends Vehicle{
             }
     }
     
+     public int calculateMaxCapacity(){
+        int maxCapacity = 0;
+        
+        if(model.equalsIgnoreCase("SUV"))
+            maxCapacity = 7;
+        else if(model.equalsIgnoreCase("Sport"))
+            maxCapacity = 2;
+        else if(model.equalsIgnoreCase("Truck"))
+            maxCapacity = 4;
+        else if(model.equalsIgnoreCase("Daily"))
+            maxCapacity = 4;
+        else 
+            maxCapacity = 4;
+        
+        return maxCapacity;
+                   
+    }
+     
+    @Override
+    public String toString() {
+        return "Boat{" + "length=" + length + ", width=" + width + ", flag=" + flag + ", engineType=" + engineType + ", cabinCount=" + cabinCount + ", bathroomCount=" + bathroomCount + '}';
+    }
+     
+     
+    
     
 }
