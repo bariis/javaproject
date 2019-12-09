@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-12-08T19:46:47.882Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0" etag="4i-16x1D4iKH8zrdxr9m" version="12.3.8" type="github" pages="1">
+<mxfile host="www.draw.io" modified="2019-12-09T19:31:01.201Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0" etag="ANl1xUXmH87PsLFI9FoN" version="12.3.9" type="github" pages="1">
   <diagram id="-B1ppT6hz_5FP_6IwFYu" name="Page-1">
     <mxGraphModel dx="1550" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1500" math="0" shadow="0">
       <root>
@@ -60,7 +60,7 @@
             <mxPoint x="400" y="760" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="Wsog8xhASZG21VbPrZgl-2" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.172;entryY=1.043;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="MA55_t0_zQ04JRDkS3So-5" edge="1" target="MA55_t0_zQ04JRDkS3So-4">
+        <mxCell id="Wsog8xhASZG21VbPrZgl-2" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.172;entryY=1.043;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="MA55_t0_zQ04JRDkS3So-5" target="MA55_t0_zQ04JRDkS3So-4" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="211" y="780" as="sourcePoint"/>
             <mxPoint x="290" y="750" as="targetPoint"/>
@@ -70,6 +70,30 @@
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="502" y="864" as="sourcePoint"/>
             <mxPoint x="490" y="760" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u7Z1UTMWD-o3jPnELLZr-2" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;VehicleInterface&lt;br&gt;&lt;/p&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=40;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;" vertex="1" parent="1">
+          <mxGeometry x="301" y="1250" width="180" height="66" as="geometry"/>
+        </mxCell>
+        <mxCell id="u7Z1UTMWD-o3jPnELLZr-3" value="+ calculateMaxCapacity(): int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="u7Z1UTMWD-o3jPnELLZr-2">
+          <mxGeometry y="40" width="180" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="u7Z1UTMWD-o3jPnELLZr-6" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="MA55_t0_zQ04JRDkS3So-8" target="u7Z1UTMWD-o3jPnELLZr-2">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="180" y="1200" as="sourcePoint"/>
+            <mxPoint x="340" y="1200" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u7Z1UTMWD-o3jPnELLZr-7" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;exitX=0.5;exitY=0.992;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="osiSDmEnFBa9YtkusUpC-4" target="u7Z1UTMWD-o3jPnELLZr-2">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="375.5" y="1114" as="sourcePoint"/>
+            <mxPoint x="586.5" y="1250" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u7Z1UTMWD-o3jPnELLZr-8" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="osiSDmEnFBa9YtkusUpC-8" target="u7Z1UTMWD-o3jPnELLZr-2">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="594.5" y="1094" as="sourcePoint"/>
+            <mxPoint x="805.5" y="1230" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
       </root>
