@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-12-09T20:14:26.993Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0 Safari/605.1.15" etag="Y-tEHOMrUfFBpSoPXqW9" version="12.3.9" type="github" pages="1">
+<mxfile host="www.draw.io" modified="2019-12-09T20:15:18.616Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0 Safari/605.1.15" etag="cDhi6wWc0xjG2UxHYfyL" version="12.3.9" type="github" pages="1">
   <diagram id="-B1ppT6hz_5FP_6IwFYu" name="Page-1">
     <mxGraphModel dx="946" dy="662" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1500" math="0" shadow="0">
       <root>
@@ -97,16 +97,16 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="kv0yy4VYP6Upgk7bpCAp-1" value="User&#xa;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
-          <mxGeometry x="670" y="460" width="160" height="210" as="geometry"/>
+          <mxGeometry x="650" y="460" width="220" height="210" as="geometry"/>
         </mxCell>
         <mxCell id="kv0yy4VYP6Upgk7bpCAp-2" value="- name: String&#xa;- surname: String&#xa;- email: String&#xa;- username: String&#xa;- password: String&#xa;- isAdmin: boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="kv0yy4VYP6Upgk7bpCAp-1">
-          <mxGeometry y="26" width="160" height="94" as="geometry"/>
+          <mxGeometry y="26" width="220" height="94" as="geometry"/>
         </mxCell>
         <mxCell id="kv0yy4VYP6Upgk7bpCAp-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="kv0yy4VYP6Upgk7bpCAp-1">
-          <mxGeometry y="120" width="160" height="8" as="geometry"/>
+          <mxGeometry y="120" width="220" height="8" as="geometry"/>
         </mxCell>
         <mxCell id="kv0yy4VYP6Upgk7bpCAp-4" value="+ User()&#xa;+ User(String, String, String,&#xa;String, String, boolean)&#xa;+ getters &amp; setters&#xa;+ toString(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="kv0yy4VYP6Upgk7bpCAp-1">
-          <mxGeometry y="128" width="160" height="82" as="geometry"/>
+          <mxGeometry y="128" width="220" height="82" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
