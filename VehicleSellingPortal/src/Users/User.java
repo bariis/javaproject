@@ -18,13 +18,19 @@ public class User {
     private String email;
     private String username;
     private String password;
+    private boolean isAdmin;
+    
+    public User(){
+        
+    }
 
-    public User(String name, String surname, String email, String username, String password) {
+    public User(String name, String surname, String email, String username, String password, boolean isAdmin) {
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.username = username;
         this.password = password;
+        this.isAdmin = isAdmin;
     }
     
     
@@ -68,4 +74,19 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }    
+
+    public boolean isIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" + "name=" + name + ", surname=" + surname + ", email=" + email + ", username=" + username + ", password=" + password + ", isAdmin=" + isAdmin + '}';
+    }
+    
+    
 }

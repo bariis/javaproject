@@ -41,5 +41,25 @@ public class VehicleSys {
             return false;
         }
     }
+    
+      public static String displayVehicles() {
+        String output = "";
+
+        for (Vehicle vehicle : list) {
+            output += list.toString() + "\n";
+        }
+
+        return output;
+    }
+      
+       public static Vehicle searchVehicle(int listingId) {
+        for (Vehicle vehicle : list) {
+            if (vehicle.getListingId() == listingId) {
+                return vehicle;
+            }
+        }
+
+        return null;
+    }
 }
 
