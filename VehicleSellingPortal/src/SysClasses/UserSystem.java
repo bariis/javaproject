@@ -47,7 +47,7 @@ public class UserSystem {
     
     // writes user information to file.
     public static void writeAllUsersToFile(){
-        
+       
     }
     
 }
