@@ -162,7 +162,9 @@ public class RegisterFrame extends javax.swing.JFrame {
 
     private void signUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpButtonActionPerformed
 
-        if(nameField.getText().isEmpty() || surnameField.getText().isEmpty() || usernameField.getText().isEmpty() || pwField.getText().isEmpty() || emailField.getText().isEmpty() || confirmPwField.getText().isEmpty()){
+        if(nameField.getText().isEmpty() || surnameField.getText().isEmpty() || 
+                usernameField.getText().isEmpty() || pwField.getText().isEmpty() || 
+                emailField.getText().isEmpty() || confirmPwField.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Please fill in all the fields!");
             return;
         } else {
