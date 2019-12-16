@@ -31,8 +31,8 @@ public class LoginFrame extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        usernameField = new javax.swing.JTextField();
+        pwField = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         loginButton = new javax.swing.JButton();
         registerButton = new javax.swing.JButton();
@@ -44,7 +44,12 @@ public class LoginFrame extends javax.swing.JFrame {
 
         jLabel2.setText("Password:");
 
-        jTextField1.setToolTipText("");
+        usernameField.setToolTipText("");
+        usernameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernameFieldActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Bernard MT Condensed", 1, 48)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -77,11 +82,11 @@ public class LoginFrame extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE))
+                                .addComponent(usernameField))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(21, 21, 21)
-                                .addComponent(jPasswordField1)))
+                                .addComponent(pwField)))
                         .addGap(9, 9, 9))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -101,10 +106,10 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pwField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -123,10 +128,10 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_registerButtonActionPerformed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        if(jTextField1.getText().equalsIgnoreCase("admin") && jPasswordField1.getPassword().toString().equalsIgnoreCase("adminpass")){
+        if(usernameField.getText().equalsIgnoreCase("admin") && pwField.getPassword().toString().equalsIgnoreCase("adminpass")){
             // Show the admin frame
         }
-        else if(jTextField1.getText().isEmpty() || jPasswordField1.getPassword().toString().isEmpty()) {
+        else if(usernameField.getText().isEmpty() || pwField.getPassword().toString().isEmpty()) {
             // Issue to fix - doesn't work when only 1 entered
             JOptionPane.showMessageDialog(null, "Please fill in all the fields!");
         }
@@ -134,6 +139,10 @@ public class LoginFrame extends javax.swing.JFrame {
             // Show the user frame
         }
     }//GEN-LAST:event_loginButtonActionPerformed
+
+    private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,9 +183,9 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton loginButton;
+    private javax.swing.JPasswordField pwField;
     private javax.swing.JButton registerButton;
+    private javax.swing.JTextField usernameField;
     // End of variables declaration//GEN-END:variables
 }
