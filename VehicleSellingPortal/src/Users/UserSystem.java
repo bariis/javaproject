@@ -16,7 +16,7 @@ public class UserSystem {
     
     public static ArrayList<User> usersList = new ArrayList<User>();
     
-    
+    // checks if username already exist or not
     public static boolean checkUser(String userName){
         for(User user: usersList)
             if(user.getUsername().compareTo(userName) == 0)
@@ -24,6 +24,24 @@ public class UserSystem {
         
         return false;
     }
+    
+    // adds user to the arrayList
+     public static void addUser(){
+         
+     }
+    
+    
+    
+    // reads users information from file and reconstruct the users ArrayList.
+    public static void readAllUsersFromFile(){
+        
+    }
+    
+    // writes user information to file.
+    public static void writeAllUsersToFile(){
+        
+    }
+    
     
     
     

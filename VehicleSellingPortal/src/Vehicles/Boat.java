@@ -80,6 +80,11 @@ public class Boat extends Vehicle{
     public void setBathroomCount(int bathroomCount) {
         this.bathroomCount = bathroomCount;
     }
+
+    @Override
+    public double calculateTax() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }

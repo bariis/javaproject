@@ -61,4 +61,13 @@ public class Motorcycle extends Vehicle{
     }
     
     
+    // recalculate the price according to the engine size
+    public double calculateTax(){
+            return 2.5;
+    }
+    
+    public String toString(){
+        return "Motorcycle" + super.toString() + "\nLicenes Plate= " + licensePlate + "\nCapacity= " + capacity + "\nTop speed= " + topSpeed + "\nEngine size= " + engineSize + "\n";
+    }
+    
 }
