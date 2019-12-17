@@ -6,6 +6,8 @@
 
 package Users;
 
+import UserHasA.BankAccount;
+
 /**
  *
  * @author barisertas
@@ -18,7 +20,7 @@ public class User {
     private String email;
     private String username;
     private char[] password;
-    
+    private BankAccount account = new BankAccount(0);
     
     public User(){
         
@@ -79,7 +81,9 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "name=" + name + ", surname=" + surname + ", email=" + email + ", username=" + username + ", password=" + password +"\n";
+        return "User" + "\nname=" + name + "\nsurname=" + surname + "\nemail=" +
+                email + "\nusername=" + username + "\npassword=" + password + 
+                "\nbalance=" + account.getAccountBalance();
     }
     
     

@@ -128,10 +128,15 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_registerButtonActionPerformed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        if(usernameField.getText().equalsIgnoreCase("admin") && pwField.getPassword().toString().equalsIgnoreCase("adminpass")){
+
+        String passText = new String(pwField.getPassword());
+        if(usernameField.getText().equalsIgnoreCase("admin") && 
+                passText.equalsIgnoreCase("admin")){
             // Show the admin frame
+            AdminAddVehicleFrame adminVehicleFrame = new AdminAddVehicleFrame();
+            adminVehicleFrame.setVisible(true);
         }
-        else if(usernameField.getText().isEmpty() || pwField.getPassword().toString().isEmpty()) {
+        else if(usernameField.getText().isEmpty() || passText.isEmpty()) {
             // Issue to fix - doesn't work when only 1 entered
             JOptionPane.showMessageDialog(null, "Please fill in all the fields!");
         }

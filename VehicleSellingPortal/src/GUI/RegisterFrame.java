@@ -15,7 +15,6 @@ import javax.swing.JOptionPane;
  * @author barisertas
  */
 public class RegisterFrame extends javax.swing.JFrame {
-
     /**
      * Creates new form RegisterFrame
      */
@@ -48,7 +47,7 @@ public class RegisterFrame extends javax.swing.JFrame {
         pwField = new javax.swing.JPasswordField();
         confirmPwField = new javax.swing.JPasswordField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Name:");
 

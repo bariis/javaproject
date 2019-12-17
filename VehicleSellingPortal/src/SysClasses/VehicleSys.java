@@ -42,6 +42,17 @@ public class VehicleSys {
         }
     }
     
+    public static boolean removeVehicle(Vehicle obj){
+        for(Vehicle v : list){
+            if(v == obj){
+                list.remove(v);
+                return true;
+            }
+        }
+        return false;
+    }
+    
+      // displays every Vehicle in the list
       public static String displayVehicles() {
         String output = "";
 

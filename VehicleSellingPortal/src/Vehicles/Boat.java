@@ -17,13 +17,12 @@ public class Boat extends Vehicle{
     private String flag;
     private String engineType;
     private int cabinCount;
-    private int bathroomCount;
 
     public Boat() {
     }
 
     public Boat(double length, double width, String flag, String engineType, 
-            int cabinCount, int bathroomCount, String name, double price, String listingDate, 
+            int cabinCount, String name, double price, String listingDate, 
             int modelYear, String model, String type) {
         super(name, price, listingDate, modelYear, model, type);
         this.length = length;
@@ -31,7 +30,6 @@ public class Boat extends Vehicle{
         this.flag = flag;
         this.engineType = engineType;
         this.cabinCount = cabinCount;
-        this.bathroomCount = bathroomCount;
     }
 
     public double getLength() {
@@ -54,10 +52,6 @@ public class Boat extends Vehicle{
         return cabinCount;
     }
 
-    public int getBathroomCount() {
-        return bathroomCount;
-    }
-
     public void setLength(double length) {
         this.length = length;
     }
@@ -78,9 +72,6 @@ public class Boat extends Vehicle{
         this.cabinCount = cabinCount;
     }
 
-    public void setBathroomCount(int bathroomCount) {
-        this.bathroomCount = bathroomCount;
-    }
     
     @Override
     public double calculateTax(){
@@ -102,7 +93,8 @@ public class Boat extends Vehicle{
      
     @Override
     public String toString() {
-        return "Boat{" + "length=" + length + ", width=" + width + ", flag=" + flag + ", engineType=" + engineType + ", cabinCount=" + cabinCount + ", bathroomCount=" + bathroomCount + '}';
+        return "Boat" + "\nlength=" + length + "\nwidth=" + width + "\nflag=" + 
+                flag + "\nengineType=" + engineType + "\ncabinCount=" + cabinCount;
     }
      
      
