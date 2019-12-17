@@ -23,7 +23,8 @@ public class Boat extends Vehicle{
     }
 
     public Boat(double length, double width, String flag, String engineType, 
-            int cabinCount, int bathroomCount, String name, double price, String listingDate, int modelYear, String model, String type) {
+            int cabinCount, int bathroomCount, String name, double price, String listingDate, 
+            int modelYear, String model, String type) {
         super(name, price, listingDate, modelYear, model, type);
         this.length = length;
         this.width = width;
@@ -80,11 +81,31 @@ public class Boat extends Vehicle{
     public void setBathroomCount(int bathroomCount) {
         this.bathroomCount = bathroomCount;
     }
-
+    
     @Override
-    public double calculateTax() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public double calculateTax(){
+       
+            if(this.flag.equalsIgnoreCase("Turkish")){
+                return 0.10 * this.price;
+            }
+            else if(this.flag.equalsIgnoreCase("American")){
+                return 0.30 * this.price;
+            }
+            else {
+                return 0.20 * this.price;
+            }
     }
+    
+    public int calculateMaxCapacity(){
+        return cabinCount * 2;
+    }
+     
+    @Override
+    public String toString() {
+        return "Boat{" + "length=" + length + ", width=" + width + ", flag=" + flag + ", engineType=" + engineType + ", cabinCount=" + cabinCount + ", bathroomCount=" + bathroomCount + '}';
+    }
+     
+     
     
     
 }

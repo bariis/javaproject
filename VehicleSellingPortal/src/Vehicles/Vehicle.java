@@ -87,7 +87,4 @@ public abstract class Vehicle {
         return "\n" + name + "\n" + price + "$" + "\n" + listingDate + "\n" + modelYear +
                 "\n" + model + "\n" + type;
     }
-    
-    //commit test
-    
 }

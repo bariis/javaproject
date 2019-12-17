@@ -17,14 +17,20 @@ public class User {
     private String surname;
     private String email;
     private String username;
-    private String password;
+    private char[] password;
+    
+    
+    public User(){
+        
+    }
 
-    public User(String name, String surname, String email, String username, String password) {
+    public User(String name, String surname, String email, String username, char[] password) {
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.username = username;
         this.password = password;
+      
     }
     
     
@@ -61,15 +67,20 @@ public class User {
         this.username = username;
     }
 
-    public String getPassword() {
+    public char[] getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(char[] password) {
         this.password = password;
+    }    
+
+
+
+    @Override
+    public String toString() {
+        return "User{" + "name=" + name + ", surname=" + surname + ", email=" + email + ", username=" + username + ", password=" + password +"\n";
     }
-    
-    
     
     
 }
