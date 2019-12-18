@@ -3,20 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/D:/All%20the%20Stuff/Programs/GitHubRepo/javaproject/VehicleSellingPortal/src/SysClasses/UserSystem.java</file>
-            <file>file:/D:/All%20the%20Stuff/Programs/GitHubRepo/javaproject/VehicleSellingPortal/src/SysClasses/VehicleSys.java</file>
-            <file>file:/D:/All%20the%20Stuff/Programs/GitHubRepo/javaproject/VehicleSellingPortal/src/Users/User.java</file>
-            <file>file:/D:/All%20the%20Stuff/Programs/GitHubRepo/javaproject/VehicleSellingPortal/src/GUI/LoginFrame.java</file>
-            <file>file:/D:/All%20the%20Stuff/Programs/GitHubRepo/javaproject/VehicleSellingPortal/src/GUI/RegisterFrame.java</file>
-=======
             <file>file:/Users/barisertas/Desktop/JavaProject-221/javaproject/VehicleSellingPortal/src/Users/User.java</file>
             <file>file:/Users/barisertas/Desktop/JavaProject-221/javaproject/VehicleSellingPortal/src/UserHasA/BankAccount.java</file>
             <file>file:/Users/barisertas/Desktop/JavaProject-221/javaproject/VehicleSellingPortal/src/GUI/LoginFrame.java</file>
             <file>file:/Users/barisertas/Desktop/JavaProject-221/javaproject/VehicleSellingPortal/src/Vehicles/Vehicle.java</file>
+            <file>file:/Users/barisertas/Desktop/JavaProject-221/javaproject/VehicleSellingPortal/src/SysClasses/UserSystem.java</file>
             <file>file:/Users/barisertas/Desktop/JavaProject-221/javaproject/VehicleSellingPortal/src/SysClasses/VehicleSys.java</file>
             <file>file:/Users/barisertas/Desktop/JavaProject-221/javaproject/VehicleSellingPortal/src/GUI/RegisterFrame.java</file>
->>>>>>> bad2f5cda9b528100a78311886640f1b71190c29
         </group>
     </open-files>
 </project-private>
