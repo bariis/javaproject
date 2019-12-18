@@ -71,7 +71,7 @@ public class UserSystem {
         try {
             ObjectInputStream is = new ObjectInputStream(new FileInputStream("users.bin"));
             try {
-                usersList.addAll((ArrayList<User>) is.readObject());
+                userSet.addAll((HashSet<User>) is.readObject());
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(UserSystem.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -84,7 +84,7 @@ public class UserSystem {
     public static void writeAllUsersToFile(){
         try {
             ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("users.bin"));
-            os.writeObject(usersList);
+            os.writeObject(userSet);
         } catch (IOException ex) {
             Logger.getLogger(UserSystem.class.getName()).log(Level.SEVERE, null, ex);
         }
