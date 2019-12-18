@@ -23,18 +23,36 @@ import java.util.logging.Logger;
 public class UserSystem {
     
     public static ArrayList<User> usersList = new ArrayList<User>();
+    public static HashSet<User> userSet = new HashSet<User>();
     
     // checks if username already exist or not
-    public static boolean checkUser(String username){
+    /*public static boolean checkUser(String username){
         for(User user: usersList){
             if(user.getUsername().equals(username)){
                 return true;
             }
         }
         return false;
+    }*/
+    
+    public static boolean checkUser(String username){
+        for(User user : userSet)
+            if(user.getUsername().equals(username))
+                return true;
+        
+        return false;
+    }
+    
+    public static boolean addUserr(User user){
+        if(!checkUser(user.getName())){
+            userSet.add(user);
+            return true;
+        }
+        return false;
     }
     
     // adds user to the arrayList
+    /*
      public static boolean addUser(User user){
          if(!checkUser(user.getName())){
             usersList.add(user);
@@ -43,7 +61,7 @@ public class UserSystem {
         else {
             return false;
         }
-     }
+     }*/
     
     
     

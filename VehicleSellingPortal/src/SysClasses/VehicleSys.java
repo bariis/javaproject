@@ -28,6 +28,7 @@ import java.util.logging.Logger;
  */
 public class VehicleSys {
     private static ArrayList<Vehicle> list = new ArrayList<Vehicle>();
+    
 
     // this method only checks if the object that will be added is already in 
     // the list, according to the name of the object
@@ -84,6 +85,8 @@ public class VehicleSys {
 
         return null;
     }
+       
+       
        
     // reads vehicle information from the file 
     public static void readAllVehiclesFromFile(){
