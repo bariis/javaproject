@@ -2,6 +2,8 @@
 package SysClasses;
 
 
+import Vehicles.Boat;
+import Vehicles.Car;
 import Vehicles.Vehicle;
 import java.util.ArrayList;
 

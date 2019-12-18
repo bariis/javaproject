@@ -20,6 +20,7 @@ public abstract class Vehicle {
     protected int modelYear;
     protected String model;
     protected String type;
+    protected static int totalVehicles = 0;
     
     public Vehicle() {
     }
@@ -32,6 +33,7 @@ public abstract class Vehicle {
         this.model = model;
         this.type = type;
         listingId++;
+        totalVehicles++;
     }
     
     //abstract method. car and motorcycle will treat differently.
@@ -81,10 +83,24 @@ public abstract class Vehicle {
         this.model = model;
     }
 
-    @Override
+    public static int getTotalVehicles() {
+        return totalVehicles;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+    
+     @Override
     // toString will most likely not be used
     public String toString() {
         return "\n" + name + "\n" + price + "$" + "\n" + listingDate + "\n" + modelYear +
                 "\n" + model + "\n" + type;
     }
+    
+    
 }
