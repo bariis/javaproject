@@ -84,5 +84,14 @@ public class VehicleSys {
     public static void writeAllVehiclesToFile(){
        
     }
+    
+    // display method
+    public static String display(){
+        String temp = "";
+        for(Vehicle v : list){
+            temp+= v.toString();
+        }
+        return temp;
+    }
 }
 
