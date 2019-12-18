@@ -87,6 +87,10 @@ public abstract class Vehicle {
         return totalVehicles;
     }
 
+    public static void setTotalVehicles(int totalVehicles) {
+        Vehicle.totalVehicles = totalVehicles;
+    }
+
     public String getType() {
         return type;
     }

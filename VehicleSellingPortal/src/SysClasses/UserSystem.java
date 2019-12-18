@@ -7,7 +7,14 @@
 package SysClasses;
 
 import Users.User;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -42,12 +49,27 @@ public class UserSystem {
     
     // reads users information from file and reconstruct the users ArrayList.
     public static void readAllUsersFromFile(){
-        
+        try {
+            ObjectInputStream is = new ObjectInputStream(new FileInputStream("users.bin"));
+            try {
+                usersList.addAll((ArrayList<User>) is.readObject());
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(UserSystem.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(UserSystem.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     // writes user information to file.
     public static void writeAllUsersToFile(){
-       
+        try {
+            ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("users.bin"));
+            os.writeObject(usersList);
+        } catch (IOException ex) {
+            Logger.getLogger(UserSystem.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
     
 }

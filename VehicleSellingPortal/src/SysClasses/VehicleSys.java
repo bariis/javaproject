@@ -5,7 +5,16 @@ package SysClasses;
 import Vehicles.Boat;
 import Vehicles.Car;
 import Vehicles.Vehicle;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -48,6 +57,7 @@ public class VehicleSys {
         for(Vehicle v : list){
             if(v == obj){
                 list.remove(v);
+                Vehicle.setTotalVehicles(Vehicle.getTotalVehicles()-1);
                 return true;
             }
         }
@@ -59,7 +69,7 @@ public class VehicleSys {
         String output = "";
 
         for (Vehicle vehicle : list) {
-            output += list.toString() + "\n";
+            output += list.toString();
         }
 
         return output;
@@ -77,21 +87,26 @@ public class VehicleSys {
        
     // reads vehicle information from the file 
     public static void readAllVehiclesFromFile(){
-        
+        try {
+            ObjectInputStream is = new ObjectInputStream(new FileInputStream("vehicles.bin"));
+            try {
+                list.addAll((ArrayList<Vehicle>) is.readObject());
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(VehicleSys.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(VehicleSys.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     // writes vehicle information to the file
     public static void writeAllVehiclesToFile(){
-       
-    }
-    
-    // display method
-    public static String display(){
-        String temp = "";
-        for(Vehicle v : list){
-            temp+= v.toString();
+        try {
+            ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("vehicles.bin"));
+            os.writeObject(list);
+        } catch (IOException ex) {
+            Logger.getLogger(VehicleSys.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return temp;
     }
 }
 
