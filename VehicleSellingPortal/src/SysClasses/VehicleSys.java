@@ -72,5 +72,15 @@ public class VehicleSys {
 
         return null;
     }
+       
+    // reads vehicle information from the file 
+    public static void readAllVehiclesFromFile(){
+        
+    }
+    
+    // writes vehicle information to the file
+    public static void writeAllVehiclesToFile(){
+       
+    }
 }
 
