@@ -44,7 +44,16 @@ public class UserSystem {
         return false;
     }
     
-    public static boolean addUserr(User user){
+    public static boolean checkUserPassCombo(String username, String password){
+        for(User user : userSet)
+            if(user.getUsername().equals(username) && 
+                    String.copyValueOf(user.getPassword()).equals(password))
+                return true;
+        
+        return false;
+    }
+    
+    public static boolean addUser(User user){
         if(!checkUser(user.getName())){
             userSet.add(user);
             return true;
@@ -52,6 +61,14 @@ public class UserSystem {
         return false;
     }
     
+    public static User searchUser(String username){
+        for(User user : userSet){
+            if(user.getUsername().equals(username)){
+                return user;
+            }
+        }
+        return null;
+    }
     // adds user to the arrayList
     /*
      public static boolean addUser(User user){

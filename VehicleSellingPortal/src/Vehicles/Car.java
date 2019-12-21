@@ -106,7 +106,9 @@ public class Car extends Vehicle implements VehicleInterface{
     }
     
     public String toString(){
-        return "Car" + "\nHorsePower= " + horsePower + "\nLicense Plate= " + licensePlate + "\nTire model= " + tireModel +"\nColor= " + color + "\nTop Speed= " + topSpeed + "\n";
+        return "Car" + super.toString() + "\nHorsePower= " + horsePower + 
+                "\nLicense Plate= " + licensePlate + "\nTire model= " + 
+                tireModel +"\nColor= " + color + "\nTop Speed= " + topSpeed;
     }
     
 }

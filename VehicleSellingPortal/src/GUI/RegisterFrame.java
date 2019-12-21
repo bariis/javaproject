@@ -48,6 +48,7 @@ public class RegisterFrame extends javax.swing.JFrame {
         confirmPwField = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setText("Name:");
 
@@ -181,7 +182,7 @@ public class RegisterFrame extends javax.swing.JFrame {
                     char[] password = pwField.getPassword();
                     String email = emailField.getText();
                     User user = new User(name, surname, email, username, password);
-                    UserSystem.usersList.add(user);
+                    UserSystem.addUser(user);
                     
                     JOptionPane.showMessageDialog(null, "Registration successful. You can login now.");
                     

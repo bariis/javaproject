@@ -102,8 +102,9 @@ public abstract class Vehicle {
      @Override
     // toString will most likely not be used
     public String toString() {
-        return "\n" + name + "\n" + price + "$" + "\n" + listingDate + "\n" + modelYear +
-                "\n" + model + "\n" + type;
+        return "\nListing Name: " + name + "\nListing Price: " + price + "$" + 
+                "\nListing Date: " + listingDate + "\nModel Year: " + modelYear +
+                "\nModel Name: " + model + "\nType: " + type;
     }
     
     

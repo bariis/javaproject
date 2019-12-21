@@ -33,9 +33,9 @@ public class VehicleSys {
     // this method only checks if the object that will be added is already in 
     // the list, according to the name of the object
     // this is NOT the search function
-    public static boolean checkList(Vehicle obj){
+    public static boolean checkList(String name){
         for (int i = 0; i < list.size(); i++) {
-            if(list.get(0).getName().equalsIgnoreCase(obj.getName())){
+            if(list.get(0).getName().equalsIgnoreCase(name)){
                 return true;
             }
         }
@@ -45,7 +45,7 @@ public class VehicleSys {
     // add functional but feels like something is missing
     // check back later
     public static boolean addVehicle(Vehicle obj){
-        if(!checkList(obj)){
+        if(!checkList(obj.getName())){
             list.add(obj);
             return true;
         }
@@ -111,5 +111,20 @@ public class VehicleSys {
             Logger.getLogger(VehicleSys.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public static String[] getAllVehicleIds(){
+       String[] ids = new String[list.size()];
+       int i = 0;
+       for(Vehicle v : list){
+           ids[i] = String.valueOf(v.getListingId());
+       }
+       return ids;
+    }
+
+    public static ArrayList<Vehicle> getList() {
+        return list;
+    }
+    
+    
 }
 

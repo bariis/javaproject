@@ -9,7 +9,11 @@ package GUI;
 import SysClasses.VehicleSys;
 import Vehicles.Boat;
 import Vehicles.Car;
+import Vehicles.Motorcycle;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -104,10 +108,24 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
         jTextField32 = new javax.swing.JTextField();
         jTextField33 = new javax.swing.JTextField();
         addMotorcycleButton = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel28 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel34 = new javax.swing.JLabel();
+        removeButton = new javax.swing.JButton();
+        modifyButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
+        jTabbedPane2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTabbedPane2FocusGained(evt);
+            }
+        });
 
         jLabel1.setText("Listing Name:");
 
@@ -147,7 +165,7 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel11)
@@ -287,7 +305,7 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                         .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel22)
@@ -425,7 +443,7 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel23)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                         .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel33)
@@ -519,6 +537,70 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Add Motorcycle", jPanel5);
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jLabel28.setText("Selected Vehicle Information:");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+
+        jLabel34.setText("List of Available IDs:");
+
+        removeButton.setText("Remove Vehicle");
+        removeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeButtonActionPerformed(evt);
+            }
+        });
+
+        modifyButton.setText("Modify Vehicle");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel34)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(removeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(modifyButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel28)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jLabel28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel34))
+                        .addGap(46, 46, 46)
+                        .addComponent(removeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
+                        .addComponent(modifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(174, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Remove Vehicle", jPanel2);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -529,20 +611,58 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane2)
-                .addContainerGap())
+                .addComponent(jTabbedPane2))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void addMotorcycleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMotorcycleButtonActionPerformed
+        if(jTextField23.getText().isEmpty() || jTextField24.getText().isEmpty()
+            || jTextField25.getText().isEmpty() || jTextField26.getText().isEmpty()
+            || jTextField27.getText().isEmpty() || jTextField28.getText().isEmpty()
+            || jTextField30.getText().isEmpty() || jTextField31.getText().isEmpty()
+            || jTextField32.getText().isEmpty() || jTextField33.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Please fill in all the fields!");
+        }
+        else {
+            try{
+                String name = jTextField23.getText();
+                double price = Double.parseDouble(jTextField24.getText());
+                String date = jTextField25.getText();
+                int year = Integer.parseInt(jTextField26.getText());
+                String modelName = jTextField27.getText();
+                String typeOfCycle = jTextField28.getText();
+                String licensePlate = jTextField30.getText();
+                int capacity = Integer.parseInt(jTextField31.getText());
+                double topSpeed = Double.parseDouble(jTextField33.getText());
+                double engineSize = Double.parseDouble(jTextField32.getText());
+
+                if(!VehicleSys.checkList(name)){
+                    VehicleSys.addVehicle(new Motorcycle(licensePlate, capacity,
+                        topSpeed, engineSize, name, price, date, year, modelName,
+                        typeOfCycle));
+                JOptionPane.showMessageDialog(null, "Addition succesful!");
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "Addition unsuccesful, "
+                    + "the listing name \"" + name + "\" already exists.");
+            }
+        }
+        catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Variable type mismatch error. "
+                + ex.getMessage());
+        }
+        }
+    }//GEN-LAST:event_addMotorcycleButtonActionPerformed
+
     private void addBoatButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBoatButtonActionPerformed
-        if(jTextField12.getText().isEmpty() || jTextField13.getText().isEmpty() 
-                || jTextField14.getText().isEmpty() || jTextField15.getText().isEmpty()
-                || jTextField16.getText().isEmpty() || jTextField17.getText().isEmpty()
-                || jTextField18.getText().isEmpty() || jTextField19.getText().isEmpty()
-                || jTextField20.getText().isEmpty() || jTextField21.getText().isEmpty()
-                || jTextField22.getText().isEmpty()){
+        if(jTextField12.getText().isEmpty() || jTextField13.getText().isEmpty()
+            || jTextField14.getText().isEmpty() || jTextField15.getText().isEmpty()
+            || jTextField16.getText().isEmpty() || jTextField17.getText().isEmpty()
+            || jTextField18.getText().isEmpty() || jTextField19.getText().isEmpty()
+            || jTextField20.getText().isEmpty() || jTextField21.getText().isEmpty()
+            || jTextField22.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Please fill in all the fields!");
         }
         else {
@@ -558,24 +678,30 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
                 String flag = jTextField20.getText();
                 String engineType = jTextField21.getText();
                 int cabinCount = Integer.parseInt(jTextField22.getText());
-                VehicleSys.addVehicle(new Boat(length, width, flag, engineType,
+                if(!VehicleSys.checkList(name)){
+                    VehicleSys.addVehicle(new Boat(length, width, flag, engineType,
                         cabinCount, name, price, date, year, modelName, typeOfBoat));
-            } 
-            catch(Exception ex){
-                JOptionPane.showMessageDialog(null, "Variable type mismatch error. " 
-                        + ex.getMessage());
+                JOptionPane.showMessageDialog(null, "Addition succesful!");
             }
+            else {
+                JOptionPane.showMessageDialog(null, "Addition unsuccesful, "
+                    + "the listing name \"" + name + "\" already exists.");
+            }
+        }
+        catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Variable type mismatch error. "
+                + ex.getMessage());
+        }
         }
     }//GEN-LAST:event_addBoatButtonActionPerformed
 
     private void addCarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCarButtonActionPerformed
-        // TODO add your handling code here:
-        if(jTextField1.getText().isEmpty() || jTextField2.getText().isEmpty() 
-                || jTextField3.getText().isEmpty() || jTextField4.getText().isEmpty()
-                || jTextField5.getText().isEmpty() || jTextField6.getText().isEmpty()
-                || jTextField7.getText().isEmpty() || jTextField8.getText().isEmpty()
-                || jTextField9.getText().isEmpty() || jTextField10.getText().isEmpty()
-                || jTextField11.getText().isEmpty()){
+        if(jTextField1.getText().isEmpty() || jTextField2.getText().isEmpty()
+            || jTextField3.getText().isEmpty() || jTextField4.getText().isEmpty()
+            || jTextField5.getText().isEmpty() || jTextField6.getText().isEmpty()
+            || jTextField7.getText().isEmpty() || jTextField8.getText().isEmpty()
+            || jTextField9.getText().isEmpty() || jTextField10.getText().isEmpty()
+            || jTextField11.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Please fill in all the fields!");
         }
         else {
@@ -591,19 +717,46 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
                 String tireModel = jTextField9.getText();
                 String color = jTextField10.getText();
                 double topSpeed = Double.parseDouble(jTextField11.getText());
-                VehicleSys.addVehicle(new Car(horsepower, licensePlate, tireModel,
+                if(!VehicleSys.checkList(name)){
+                    VehicleSys.addVehicle(new Car(horsepower, licensePlate, tireModel,
                         color, topSpeed, name, price, date, year, modelName, typeOfCar));
-            } 
-            catch(Exception ex){
-                JOptionPane.showMessageDialog(null, "Variable type mismatch error. " 
-                        + ex.getMessage());
+                JOptionPane.showMessageDialog(null, "Addition succesful!");
             }
+            else {
+                JOptionPane.showMessageDialog(null, "Addition unsuccesful, "
+                    + "the listing name \"" + name + "\" already exists.");
+            }
+        }
+        catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Variable type mismatch error. "
+                + ex.getMessage());
+        }
         }
     }//GEN-LAST:event_addCarButtonActionPerformed
 
-    private void addMotorcycleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMotorcycleButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addMotorcycleButtonActionPerformed
+    private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
+        VehicleSys.removeVehicle(VehicleSys.searchVehicle(Integer.parseInt(jComboBox1.getSelectedItem().toString())));
+        JOptionPane.showMessageDialog(null, "Removal successful.");
+        jComboBox1.setModel(new DefaultComboBoxModel(VehicleSys.getAllVehicleIds()));
+        jTextArea1.setText("");
+    }//GEN-LAST:event_removeButtonActionPerformed
+
+    private void jTabbedPane2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTabbedPane2FocusGained
+       jComboBox1.setModel(new DefaultComboBoxModel(VehicleSys.getAllVehicleIds()));
+       jTextArea1.setText(VehicleSys.searchVehicle(VehicleSys.getList().get(0).getListingId()).toString());
+    }//GEN-LAST:event_jTabbedPane2FocusGained
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        jTextArea1.setText(VehicleSys.searchVehicle(Integer.parseInt(jComboBox1.getSelectedItem().toString())).toString());
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    public JComboBox<String> getjComboBox1() {
+        return jComboBox1;
+    }
+
+    public void setjTextArea1(String text) {
+        this.jTextArea1.setText(text);
+    }
 
     /**
      * @param args the command line arguments
@@ -644,6 +797,7 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
     private javax.swing.JButton addBoatButton;
     private javax.swing.JButton addCarButton;
     private javax.swing.JButton addMotorcycleButton;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -664,12 +818,14 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -677,9 +833,12 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
@@ -712,5 +871,7 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JButton modifyButton;
+    private javax.swing.JButton removeButton;
     // End of variables declaration//GEN-END:variables
 }

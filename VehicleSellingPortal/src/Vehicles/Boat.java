@@ -93,7 +93,7 @@ public class Boat extends Vehicle{
      
     @Override
     public String toString() {
-        return "Boat" + "\nlength=" + length + "\nwidth=" + width + "\nflag=" + 
+        return "Boat" + super.toString() + "\nlength=" + length + "\nwidth=" + width + "\nflag=" + 
                 flag + "\nengineType=" + engineType + "\ncabinCount=" + cabinCount;
     }
      

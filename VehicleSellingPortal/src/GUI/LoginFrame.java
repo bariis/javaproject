@@ -5,6 +5,10 @@
  */
 package GUI;
 
+import SysClasses.UserSystem;
+import SysClasses.VehicleSys;
+import Users.User;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -44,12 +48,14 @@ public class LoginFrame extends javax.swing.JFrame {
 
         jLabel2.setText("Password:");
 
-        usernameField.setToolTipText("");
+        usernameField.setToolTipText("Enter the username here");
         usernameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameFieldActionPerformed(evt);
             }
         });
+
+        pwField.setToolTipText("Enter the password here");
 
         jLabel3.setFont(new java.awt.Font("Bernard MT Condensed", 1, 48)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -128,20 +134,31 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_registerButtonActionPerformed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-
+        String username = usernameField.getText();
         String passText = new String(pwField.getPassword());
-        if(usernameField.getText().equalsIgnoreCase("admin") && 
+        if(username.equalsIgnoreCase("admin") && 
                 passText.equalsIgnoreCase("admin")){
             // Show the admin frame
             AdminAddVehicleFrame adminVehicleFrame = new AdminAddVehicleFrame();
             adminVehicleFrame.setVisible(true);
+            adminVehicleFrame.getjComboBox1().setModel(new DefaultComboBoxModel(VehicleSys.getAllVehicleIds()));
+            adminVehicleFrame.setjTextArea1(VehicleSys.searchVehicle(Integer.parseInt(VehicleSys.getAllVehicleIds()[0])).toString());
         }
-        else if(usernameField.getText().isEmpty() || passText.isEmpty()) {
+        else if(username.isEmpty() || passText.isEmpty()) {
             // Issue to fix - doesn't work when only 1 entered
             JOptionPane.showMessageDialog(null, "Please fill in all the fields!");
         }
         else {
-            // Show the user frame
+            if(UserSystem.checkUserPassCombo(username, passText)){
+                User currentSessionUser;
+                currentSessionUser = UserSystem.searchUser(username);
+                // open the user frame
+                // UserFrame uf = new UserFrame();
+                // uf.setVisible(true);
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "Wrong username/password combination");
+            }
         }
     }//GEN-LAST:event_loginButtonActionPerformed
 
