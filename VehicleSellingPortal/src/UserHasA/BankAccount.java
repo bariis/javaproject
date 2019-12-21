@@ -5,11 +5,13 @@
  */
 package UserHasA;
 
+import java.io.Serializable;
+
 /**
  *
  * @author brktrksvr
  */
-public class BankAccount {
+public class BankAccount  implements Serializable {
     private double accountBalance = 0;
 
     public BankAccount(double accountBalance) {

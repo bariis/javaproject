@@ -12,6 +12,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.logging.Level;
@@ -38,7 +39,7 @@ public class UserSystem {
     
     public static boolean checkUser(String username){
         for(User user : userSet)
-            if(user.getUsername().equals(username))
+            if(user.getUsername().equalsIgnoreCase(username))
                 return true;
         
         return false;
@@ -94,6 +95,7 @@ public class UserSystem {
             }
         } catch (IOException ex) {
             Logger.getLogger(UserSystem.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("HATA 1");
         }
     }
     
@@ -104,6 +106,7 @@ public class UserSystem {
             os.writeObject(userSet);
         } catch (IOException ex) {
             Logger.getLogger(UserSystem.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("HATA 2");
         }
         
     }
