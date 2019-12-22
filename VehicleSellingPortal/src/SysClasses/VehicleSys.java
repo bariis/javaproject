@@ -13,6 +13,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -35,7 +36,7 @@ public class VehicleSys {
     // this is NOT the search function
     public static boolean checkList(String name){
         for (int i = 0; i < list.size(); i++) {
-            if(list.get(0).getName().equalsIgnoreCase(name)){
+            if(list.get(i).getName().equalsIgnoreCase(name)){
                 return true;
             }
         }
@@ -113,12 +114,13 @@ public class VehicleSys {
     }
     
     public static String[] getAllVehicleIds(){
-       String[] ids = new String[list.size()];
-       int i = 0;
-       for(Vehicle v : list){
-           ids[i] = String.valueOf(v.getListingId());
-       }
-       return ids;
+        int i = 0;
+        String[] ids = new String[list.size()];
+        for(Vehicle v : list){
+            ids[i] = v.getListingId() + "";
+            i++;
+        }
+        return ids;
     }
 
     public static ArrayList<Vehicle> getList() {

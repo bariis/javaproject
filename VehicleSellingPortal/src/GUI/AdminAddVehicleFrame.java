@@ -637,11 +637,10 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
                 int capacity = Integer.parseInt(jTextField31.getText());
                 double topSpeed = Double.parseDouble(jTextField33.getText());
                 double engineSize = Double.parseDouble(jTextField32.getText());
-
-                if(!VehicleSys.checkList(name)){
-                    VehicleSys.addVehicle(new Motorcycle(licensePlate, capacity,
+                boolean addition = VehicleSys.addVehicle(new Motorcycle(licensePlate, capacity,
                         topSpeed, engineSize, name, price, date, year, modelName,
                         typeOfCycle));
+                if(addition){
                 JOptionPane.showMessageDialog(null, "Addition succesful!");
             }
             else {
@@ -678,9 +677,10 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
                 String flag = jTextField20.getText();
                 String engineType = jTextField21.getText();
                 int cabinCount = Integer.parseInt(jTextField22.getText());
-                if(!VehicleSys.checkList(name)){
-                    VehicleSys.addVehicle(new Boat(length, width, flag, engineType,
+                boolean addition = VehicleSys.addVehicle(new Boat(length, width, flag, engineType,
                         cabinCount, name, price, date, year, modelName, typeOfBoat));
+                if(addition){
+                    
                 JOptionPane.showMessageDialog(null, "Addition succesful!");
             }
             else {
@@ -717,15 +717,15 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
                 String tireModel = jTextField9.getText();
                 String color = jTextField10.getText();
                 double topSpeed = Double.parseDouble(jTextField11.getText());
-                if(!VehicleSys.checkList(name)){
-                    VehicleSys.addVehicle(new Car(horsepower, licensePlate, tireModel,
+                boolean addition = VehicleSys.addVehicle(new Car(horsepower, licensePlate, tireModel,
                         color, topSpeed, name, price, date, year, modelName, typeOfCar));
-                JOptionPane.showMessageDialog(null, "Addition succesful!");
-            }
-            else {
-                JOptionPane.showMessageDialog(null, "Addition unsuccesful, "
+                if(addition){
+                    JOptionPane.showMessageDialog(null, "Addition succesful!");
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Addition unsuccesful, "
                     + "the listing name \"" + name + "\" already exists.");
-            }
+                }
         }
         catch(Exception ex){
             JOptionPane.showMessageDialog(null, "Variable type mismatch error. "
@@ -743,10 +743,7 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
 
     private void jTabbedPane2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTabbedPane2FocusGained
        jComboBox1.setModel(new DefaultComboBoxModel(VehicleSys.getAllVehicleIds()));
-       
-       // HATA BURDA.
-       
-//       jTextArea1.setText(VehicleSys.searchVehicle(VehicleSys.getList().get(0).getListingId()).toString());
+       jTextArea1.setText(VehicleSys.searchVehicle(VehicleSys.getList().get(0).getListingId()).toString());
     }//GEN-LAST:event_jTabbedPane2FocusGained
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
