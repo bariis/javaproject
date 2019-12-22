@@ -2,7 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
+
         <group>
             <file>file:/D:/All%20the%20Stuff/Programs/GitHubRepo/javaproject/VehicleSellingPortal/src/SysClasses/UserSystem.java</file>
             <file>file:/D:/All%20the%20Stuff/Programs/GitHubRepo/javaproject/VehicleSellingPortal/src/SysClasses/VehicleSys.java</file>
@@ -16,8 +16,6 @@
             <file>file:/D:/All%20the%20Stuff/Programs/GitHubRepo/javaproject/VehicleSellingPortal/src/GUI/RegisterFrame.java</file>
             <file>file:/D:/All%20the%20Stuff/Programs/GitHubRepo/javaproject/VehicleSellingPortal/src/Vehicles/Boat.java</file>
         </group>
-=======
         <group/>
->>>>>>> dc2ee1bba00dfeed7d96e065b375b047fd7e0947
     </open-files>
 </project-private>
