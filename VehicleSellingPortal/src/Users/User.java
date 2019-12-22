@@ -76,6 +76,14 @@ public class User implements Serializable {
         this.password = password;
     }    
 
+    public BankAccount getAccount() {
+        return account;
+    }
+
+    public void setAccount(BankAccount account) {
+        this.account = account;
+    }
+
 
 
     @Override

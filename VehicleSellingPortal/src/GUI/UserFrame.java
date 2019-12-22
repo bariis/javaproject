@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import UserHasA.BankAccount;
 import Users.User;
 
 /**
@@ -19,9 +20,10 @@ public class UserFrame extends javax.swing.JFrame {
     public UserFrame() {
         initComponents();
     }
-    
+    User user;
     public void setWelcome(User currentUser){
-        welcomeLabel.setText(currentUser.getName() + " " + currentUser.getSurname());
+        user = currentUser;
+        welcomeLabel.setText(user.getName() + " " + user.getSurname());
     }
 
     /**
@@ -39,6 +41,7 @@ public class UserFrame extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         welcomeLabel = new javax.swing.JLabel();
+        bankAccountButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,6 +80,13 @@ public class UserFrame extends javax.swing.JFrame {
 
         jLabel2.setText("Welcome,");
 
+        bankAccountButton.setText("Open Payment Settings");
+        bankAccountButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bankAccountButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -84,7 +94,9 @@ public class UserFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bankAccountButton)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 935, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -104,9 +116,15 @@ public class UserFrame extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addGap(34, 34, 34)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addComponent(jLabel1)
-                .addGap(26, 26, 26))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel1)
+                        .addGap(26, 26, 26))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bankAccountButton)
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -124,6 +142,11 @@ public class UserFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bankAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bankAccountButtonActionPerformed
+        LoginFrame.bf.setVisible(true);
+        LoginFrame.bf.getjLabel4().setText(String.valueOf(user.getAccount().getAccountBalance()) + " $");
+    }//GEN-LAST:event_bankAccountButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,6 +184,7 @@ public class UserFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bankAccountButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

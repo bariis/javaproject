@@ -137,7 +137,7 @@ public class LoginFrame extends javax.swing.JFrame {
         regFrame.setVisible(true);
         
     }//GEN-LAST:event_registerButtonActionPerformed
-
+public static BankAccountFrame bf = new BankAccountFrame();
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         String username = usernameField.getText();
         String passText = new String(pwField.getPassword());
@@ -157,18 +157,17 @@ public class LoginFrame extends javax.swing.JFrame {
         }
         else {
             if(UserSystem.checkUserPassCombo(username, passText)){
-                User currentSessionUser;
-                currentSessionUser = UserSystem.searchUser(username);
-               
+                User currentSessionUser = UserSystem.searchUser(username);
                 userFrame.setWelcome(currentSessionUser);
                 userFrame.setVisible(true);
-                 
+                bf.setCurrentSessionUser(currentSessionUser);
             }
             else {
                 JOptionPane.showMessageDialog(null, "Wrong username/password combination");
             }
         }
     }//GEN-LAST:event_loginButtonActionPerformed
+
 
     private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
         // TODO add your handling code here:
