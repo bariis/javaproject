@@ -118,6 +118,7 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
         modifyButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setLocation(new java.awt.Point(400, 400));
         setResizable(false);
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
@@ -637,11 +638,11 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
                 int capacity = Integer.parseInt(jTextField31.getText());
                 double topSpeed = Double.parseDouble(jTextField33.getText());
                 double engineSize = Double.parseDouble(jTextField32.getText());
-                boolean addition = VehicleSys.addVehicle(new Motorcycle(licensePlate, capacity,
+                if(!VehicleSys.checkList(name)){
+                    VehicleSys.addVehicle(new Motorcycle(licensePlate, capacity,
                         topSpeed, engineSize, name, price, date, year, modelName,
                         typeOfCycle));
-                if(addition){
-                JOptionPane.showMessageDialog(null, "Addition succesful!");
+                    JOptionPane.showMessageDialog(null, "Addition succesful!");
             }
             else {
                 JOptionPane.showMessageDialog(null, "Addition unsuccesful, "
@@ -677,11 +678,10 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
                 String flag = jTextField20.getText();
                 String engineType = jTextField21.getText();
                 int cabinCount = Integer.parseInt(jTextField22.getText());
-                boolean addition = VehicleSys.addVehicle(new Boat(length, width, flag, engineType,
+                if(!VehicleSys.checkList(name)){
+                    VehicleSys.addVehicle(new Boat(length, width, flag, engineType,
                         cabinCount, name, price, date, year, modelName, typeOfBoat));
-                if(addition){
-                    
-                JOptionPane.showMessageDialog(null, "Addition succesful!");
+                    JOptionPane.showMessageDialog(null, "Addition succesful!");
             }
             else {
                 JOptionPane.showMessageDialog(null, "Addition unsuccesful, "
@@ -717,9 +717,9 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
                 String tireModel = jTextField9.getText();
                 String color = jTextField10.getText();
                 double topSpeed = Double.parseDouble(jTextField11.getText());
-                boolean addition = VehicleSys.addVehicle(new Car(horsepower, licensePlate, tireModel,
+                if(!VehicleSys.checkList(name)){
+                    VehicleSys.addVehicle(new Car(horsepower, licensePlate, tireModel,
                         color, topSpeed, name, price, date, year, modelName, typeOfCar));
-                if(addition){
                     JOptionPane.showMessageDialog(null, "Addition succesful!");
                 }
                 else {
@@ -742,8 +742,10 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_removeButtonActionPerformed
 
     private void jTabbedPane2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTabbedPane2FocusGained
-       jComboBox1.setModel(new DefaultComboBoxModel(VehicleSys.getAllVehicleIds()));
-       jTextArea1.setText(VehicleSys.searchVehicle(VehicleSys.getList().get(0).getListingId()).toString());
+       if(!VehicleSys.getList().isEmpty()){
+            jComboBox1.setModel(new DefaultComboBoxModel(VehicleSys.getAllVehicleIds()));
+            jTextArea1.setText(VehicleSys.searchVehicle(VehicleSys.getList().get(0).getListingId()).toString());
+       }
     }//GEN-LAST:event_jTabbedPane2FocusGained
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed

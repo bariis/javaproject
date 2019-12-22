@@ -45,6 +45,7 @@ public class LoginFrame extends javax.swing.JFrame {
         registerButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(400, 400));
         setResizable(false);
 
         jLabel1.setText("Username:");
@@ -144,8 +145,10 @@ public class LoginFrame extends javax.swing.JFrame {
             // Show the admin frame
             AdminAddVehicleFrame adminVehicleFrame = new AdminAddVehicleFrame();
             adminVehicleFrame.setVisible(true);
-            adminVehicleFrame.getjComboBox1().setModel(new DefaultComboBoxModel(VehicleSys.getAllVehicleIds()));
-            //adminVehicleFrame.setjTextArea1(VehicleSys.searchVehicle(Integer.parseInt(VehicleSys.getAllVehicleIds()[0])).toString());
+            if(!VehicleSys.getList().isEmpty()){
+                adminVehicleFrame.getjComboBox1().setModel(new DefaultComboBoxModel(VehicleSys.getAllVehicleIds()));
+                adminVehicleFrame.setjTextArea1(VehicleSys.searchVehicle(Integer.parseInt(VehicleSys.getAllVehicleIds()[0])).toString());
+            }
         }
         else if(username.isEmpty() || passText.isEmpty()) {
             // Issue to fix - doesn't work when only 1 entered
@@ -157,7 +160,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 currentSessionUser = UserSystem.searchUser(username);
                
                 userFrame.setWelcome(currentSessionUser);
-                 userFrame.setVisible(true);
+                userFrame.setVisible(true);
                  
             }
             else {

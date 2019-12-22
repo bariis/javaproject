@@ -32,8 +32,8 @@ public abstract class Vehicle {
         this.modelYear = modelYear;
         this.model = model;
         this.type = type;
-        listingId++;
         totalVehicles++;
+        listingId = totalVehicles;
     }
     
     //abstract method. car and motorcycle will treat differently.
