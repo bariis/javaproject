@@ -18,9 +18,12 @@ import javax.swing.JOptionPane;
 public class LoginFrame extends javax.swing.JFrame {
 
     RegisterFrame regFrame = new RegisterFrame();
+    UserFrame userFrame = new UserFrame();
+            
     
     
     public LoginFrame() {
+        UserSystem.readAllUsersFromFile();
         initComponents();
     }
 
@@ -142,7 +145,7 @@ public class LoginFrame extends javax.swing.JFrame {
             AdminAddVehicleFrame adminVehicleFrame = new AdminAddVehicleFrame();
             adminVehicleFrame.setVisible(true);
             adminVehicleFrame.getjComboBox1().setModel(new DefaultComboBoxModel(VehicleSys.getAllVehicleIds()));
-            adminVehicleFrame.setjTextArea1(VehicleSys.searchVehicle(Integer.parseInt(VehicleSys.getAllVehicleIds()[0])).toString());
+            //adminVehicleFrame.setjTextArea1(VehicleSys.searchVehicle(Integer.parseInt(VehicleSys.getAllVehicleIds()[0])).toString());
         }
         else if(username.isEmpty() || passText.isEmpty()) {
             // Issue to fix - doesn't work when only 1 entered
@@ -152,9 +155,10 @@ public class LoginFrame extends javax.swing.JFrame {
             if(UserSystem.checkUserPassCombo(username, passText)){
                 User currentSessionUser;
                 currentSessionUser = UserSystem.searchUser(username);
-                // open the user frame
-                // UserFrame uf = new UserFrame();
-                // uf.setVisible(true);
+               
+                userFrame.setWelcome(currentSessionUser);
+                 userFrame.setVisible(true);
+                 
             }
             else {
                 JOptionPane.showMessageDialog(null, "Wrong username/password combination");

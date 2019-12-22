@@ -7,12 +7,13 @@
 package Users;
 
 import UserHasA.BankAccount;
+import java.io.Serializable;
 
 /**
  *
  * @author barisertas
  */
-public class User {
+public class User implements Serializable {
     
     
     private String name;
