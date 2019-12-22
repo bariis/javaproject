@@ -118,6 +118,7 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
         modifyButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Vehicle Selling Portal - Admin");
         setLocation(new java.awt.Point(400, 400));
         setResizable(false);
 

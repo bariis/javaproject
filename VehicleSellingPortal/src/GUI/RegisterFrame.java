@@ -48,6 +48,7 @@ public class RegisterFrame extends javax.swing.JFrame {
         confirmPwField = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Vehicle Selling Portal - Register");
         setResizable(false);
 
         jLabel1.setText("Name:");

@@ -45,6 +45,7 @@ public class LoginFrame extends javax.swing.JFrame {
         registerButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Vehicle Selling Portal - Login");
         setLocation(new java.awt.Point(400, 400));
         setResizable(false);
 
