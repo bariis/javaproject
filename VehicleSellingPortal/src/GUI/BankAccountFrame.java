@@ -21,6 +21,7 @@ public class BankAccountFrame extends javax.swing.JFrame {
     
     UserFrame userFrame = new UserFrame();
     public BankAccountFrame() {
+        //this.userFrame = userFrame;
         initComponents();
     }
 
@@ -129,9 +130,10 @@ User user;
             user.setBudget(balanceField.getText());
            // userFrame.setUserBudget(user);
            //userFrame.setUserBudget(balanceField.getText());
-           userFrame.setBudgetLabel(balanceField.getText());
+          // userFrame.setBudgetLabel(balanceField.getText());
             moneyLabel.setText(balanceField.getText());
             System.out.println(Double.parseDouble(user.getBudget()));
+            userFrame.getBudgetLabel().setText(balanceField.getText());
             
             //user.getAccount().setAccountBalance(user.getAccount().getAccountBalance()
               //      + Double.parseDouble(balanceField.getText()));

@@ -34,9 +34,10 @@ public class Main {
           VehicleSys.writeAllVehiclesToFile();
           VehicleSys.readAllVehiclesFromFile();
             String[] ids = VehicleSys.getAllVehicleIds();
+            
             for(int i = 0; i<ids.length; i++)
                 System.out.println(ids[i]);
-          System.out.println("asdasdas");
+            
          UserSystem.readAllUsersFromFile();
         LoginFrame loginFrame = new LoginFrame();
         loginFrame.setVisible(true);

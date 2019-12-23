@@ -35,8 +35,8 @@ public class UserFrame extends javax.swing.JFrame {
         return budgetLabel;
     }
 
-    public void setBudgetLabel(String budgetLabel) {
-        this.budgetLabel.setText(budgetLabel);
+    public void setBudgetLabel(String budget) {
+        budgetLabel.setText(budget);
         
     }
     
