@@ -6,7 +6,7 @@
 
 package GUI;
 
-import SysClasses.VehicleSys;
+import SysClassesAndMain.VehicleSys;
 import Vehicles.Boat;
 import Vehicles.Car;
 import Vehicles.Motorcycle;
@@ -746,7 +746,7 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
        jComboBox1.setModel(new DefaultComboBoxModel(VehicleSys.getAllVehicleIds()));
 
         // BURADA YİNE HATA VERIYOR AMINAKOYİM. 
-       jTextArea1.setText(VehicleSys.searchVehicle(VehicleSys.getList().get(0).getListingId()).toString());
+//       jTextArea1.setText(VehicleSys.searchVehicle(VehicleSys.getList().get(0).getListingId()).toString());
     }//GEN-LAST:event_jTabbedPane2FocusGained
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed

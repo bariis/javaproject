@@ -7,6 +7,7 @@ package GUI;
 
 import Users.User;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,6 +18,8 @@ public class BankAccountFrame extends javax.swing.JFrame {
     /**
      * Creates new form BankAccountFrame
      */
+    
+    UserFrame userFrame = new UserFrame();
     public BankAccountFrame() {
         initComponents();
     }
@@ -32,11 +35,11 @@ public class BankAccountFrame extends javax.swing.JFrame {
 
         depositButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        cardField = new javax.swing.JFormattedTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        balanceField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        moneyLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -50,13 +53,13 @@ public class BankAccountFrame extends javax.swing.JFrame {
         jLabel1.setText("Credit Card Number:");
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####-####-####-####")));
+            cardField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####-####-####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
+        cardField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField1ActionPerformed(evt);
+                cardFieldActionPerformed(evt);
             }
         });
 
@@ -74,17 +77,17 @@ public class BankAccountFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(jFormattedTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE))
+                        .addComponent(cardField, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(moneyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField1)))
+                                .addComponent(balanceField)))
                         .addGap(18, 18, 18)
                         .addComponent(depositButton)))
                 .addContainerGap())
@@ -95,26 +98,26 @@ public class BankAccountFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cardField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(depositButton)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(balanceField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(moneyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
+    private void cardFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
+    }//GEN-LAST:event_cardFieldActionPerformed
 User user;
 
     public void setCurrentSessionUser(User sentUser) {
@@ -122,15 +125,29 @@ User user;
     }
 
     private void depositButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_depositButtonActionPerformed
-        if(Integer.parseInt(jTextField1.getText()) >= 0 && jFormattedTextField1.getText().length() == 16){
-            user.getAccount().setAccountBalance(user.getAccount().getAccountBalance()
-                    + Double.parseDouble(jTextField1.getText()));
-            jLabel4.setText(String.valueOf(user.getAccount().getAccountBalance()));
+        if(Integer.parseInt(balanceField.getText()) >= 0 && cardField.getText().length() == 19){
+            user.setBudget(balanceField.getText());
+           // userFrame.setUserBudget(user);
+           //userFrame.setUserBudget(balanceField.getText());
+           userFrame.setBudgetLabel(balanceField.getText());
+            moneyLabel.setText(balanceField.getText());
+            System.out.println(Double.parseDouble(user.getBudget()));
+            
+            //user.getAccount().setAccountBalance(user.getAccount().getAccountBalance()
+              //      + Double.parseDouble(balanceField.getText()));
+                //    moneyLabel.setText(balanceField.getText());
+            
+           // this.setVisible(false);
+        } else{
+            JOptionPane.showMessageDialog(null, "Money should be greater than or equal to 0. Card digits should be entered fully.");
+            
         }
+        
+        // && jFormattedTextField1.getText().length() == 16
     }//GEN-LAST:event_depositButtonActionPerformed
 
     public JLabel getjLabel4() {
-        return jLabel4;
+        return moneyLabel;
     }
 
     /**
@@ -169,12 +186,12 @@ User user;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField balanceField;
+    private javax.swing.JFormattedTextField cardField;
     private javax.swing.JButton depositButton;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel moneyLabel;
     // End of variables declaration//GEN-END:variables
 }

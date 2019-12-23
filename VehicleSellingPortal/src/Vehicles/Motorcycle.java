@@ -83,7 +83,7 @@ public class Motorcycle extends Vehicle implements VehicleInterface{
     public String toString(){
         return "Motorcycle" + super.toString() + "\nLicense Plate= " + licensePlate 
                 + "\nCapacity= " + capacity + "\nTop speed= " + topSpeed 
-                + "\nEngine size= " + engineSize;
+                + "\nEngine size= " + engineSize + "\n\n";
     }
 
     @Override

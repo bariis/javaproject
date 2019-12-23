@@ -6,7 +6,7 @@
 
 package GUI;
 
-import SysClasses.UserSystem;
+import SysClassesAndMain.UserSystem;
 import Users.User;
 import javax.swing.JOptionPane;
 
@@ -182,7 +182,7 @@ public class RegisterFrame extends javax.swing.JFrame {
                     String username = usernameField.getText();
                     char[] password = pwField.getPassword();
                     String email = emailField.getText();
-                    User user = new User(name, surname, email, username, password);
+                    User user = new User(name, surname, email, username, password, "0");
                     UserSystem.addUser(user);
                     UserSystem.writeAllUsersToFile();
                     

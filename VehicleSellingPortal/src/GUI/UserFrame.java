@@ -5,8 +5,11 @@
  */
 package GUI;
 
+import SysClassesAndMain.VehicleSys;
 import UserHasA.BankAccount;
 import Users.User;
+import javax.swing.JLabel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -17,6 +20,8 @@ public class UserFrame extends javax.swing.JFrame {
     /**
      * Creates new form UserFrame
      */
+    //BankAccountFrame bankFrame = new BankAccountFrame();
+    
     public UserFrame() {
         initComponents();
     }
@@ -26,6 +31,15 @@ public class UserFrame extends javax.swing.JFrame {
         welcomeLabel.setText(user.getName() + " " + user.getSurname());
     }
 
+    public JLabel getBudgetLabel() {
+        return budgetLabel;
+    }
+
+    public void setBudgetLabel(String budgetLabel) {
+        this.budgetLabel.setText(budgetLabel);
+        
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,47 +50,19 @@ public class UserFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         welcomeLabel = new javax.swing.JLabel();
         bankAccountButton = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        budgetLabel = new javax.swing.JLabel();
+        showVehiclesButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        textArea = new javax.swing.JTextArea();
+        idRadioButton = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setToolTipText("");
-
-        jLabel1.setText("Double click a vehicle for detailed information");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "Name", "Price", "Listing Date", "Model Year", "Model", "Type"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
 
         jLabel2.setText("Welcome,");
 
@@ -87,44 +73,74 @@ public class UserFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setText("Budget:");
+
+        budgetLabel.setText("jLabel4");
+
+        showVehiclesButton.setText("Show Vehicles");
+        showVehiclesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showVehiclesButtonActionPerformed(evt);
+            }
+        });
+
+        textArea.setColumns(20);
+        textArea.setRows(5);
+        jScrollPane1.setViewportView(textArea);
+
+        idRadioButton.setText("radio button");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bankAccountButton)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 935, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(welcomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81))
+                .addGap(1, 1, 1)
+                .addComponent(welcomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(110, 110, 110))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(idRadioButton)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(budgetLabel)
+                        .addGap(69, 69, 69)
+                        .addComponent(showVehiclesButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(bankAccountButton)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 693, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(36, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(budgetLabel))
+                .addGap(26, 26, 26))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(welcomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(welcomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addGap(34, 34, 34)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(jLabel1)
-                        .addGap(26, 26, 26))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bankAccountButton)
-                        .addContainerGap())))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(idRadioButton)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(showVehiclesButton)
+                    .addComponent(bankAccountButton))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -145,8 +161,16 @@ public class UserFrame extends javax.swing.JFrame {
 
     private void bankAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bankAccountButtonActionPerformed
         LoginFrame.bf.setVisible(true);
-        LoginFrame.bf.getjLabel4().setText(String.valueOf(user.getAccount().getAccountBalance()) + " $");
+       // LoginFrame.bf.getjLabel4().setText(String.valueOf(user.getAccount().getAccountBalance()) + " $");
     }//GEN-LAST:event_bankAccountButtonActionPerformed
+
+    private void showVehiclesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showVehiclesButtonActionPerformed
+            String output = "";
+            output = VehicleSys.displayVehicles();
+            
+            textArea.setText(output);
+        
+    }//GEN-LAST:event_showVehiclesButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,11 +209,14 @@ public class UserFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bankAccountButton;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel budgetLabel;
+    private javax.swing.JRadioButton idRadioButton;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JButton showVehiclesButton;
+    private javax.swing.JTextArea textArea;
     private javax.swing.JLabel welcomeLabel;
     // End of variables declaration//GEN-END:variables
 }

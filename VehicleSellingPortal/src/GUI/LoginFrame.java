@@ -5,11 +5,12 @@
  */
 package GUI;
 
-import SysClasses.UserSystem;
-import SysClasses.VehicleSys;
+import SysClassesAndMain.UserSystem;
+import SysClassesAndMain.VehicleSys;
 import Users.User;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -23,7 +24,7 @@ public class LoginFrame extends javax.swing.JFrame {
     
     
     public LoginFrame() {
-        UserSystem.readAllUsersFromFile();
+       
         initComponents();
     }
 
@@ -43,6 +44,7 @@ public class LoginFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         loginButton = new javax.swing.JButton();
         registerButton = new javax.swing.JButton();
+        adminBox = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Vehicle Selling Portal - Login");
@@ -81,6 +83,8 @@ public class LoginFrame extends javax.swing.JFrame {
             }
         });
 
+        adminBox.setText("Administrator");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -107,6 +111,8 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addComponent(loginButton)
                 .addGap(18, 18, 18)
                 .addComponent(registerButton)
+                .addGap(18, 18, 18)
+                .addComponent(adminBox)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -125,7 +131,8 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(loginButton)
-                    .addComponent(registerButton))
+                    .addComponent(registerButton)
+                    .addComponent(adminBox))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -137,12 +144,12 @@ public class LoginFrame extends javax.swing.JFrame {
         regFrame.setVisible(true);
         
     }//GEN-LAST:event_registerButtonActionPerformed
-public static BankAccountFrame bf = new BankAccountFrame();
+    public static BankAccountFrame bf = new BankAccountFrame();
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        String username = usernameField.getText();
+         String username = usernameField.getText();
         String passText = new String(pwField.getPassword());
         if(username.equalsIgnoreCase("admin") && 
-                passText.equalsIgnoreCase("admin")){
+                passText.equalsIgnoreCase("admin") && adminBox.isSelected()){
             // Show the admin frame
             AdminAddVehicleFrame adminVehicleFrame = new AdminAddVehicleFrame();
             adminVehicleFrame.setVisible(true);
@@ -209,6 +216,7 @@ public static BankAccountFrame bf = new BankAccountFrame();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox adminBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

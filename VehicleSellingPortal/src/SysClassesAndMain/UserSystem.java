@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package SysClasses;
+package SysClassesAndMain;
 
 import Users.User;
 import java.io.FileInputStream;

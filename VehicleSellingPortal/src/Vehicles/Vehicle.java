@@ -1,6 +1,8 @@
 
 package Vehicles;
 
+import java.io.Serializable;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,7 +14,7 @@ package Vehicles;
  * @author brktrksvr
  */
 
-public abstract class Vehicle {
+public abstract class Vehicle implements Serializable{
     protected int listingId = 0;
     protected String name; 
     protected double price;

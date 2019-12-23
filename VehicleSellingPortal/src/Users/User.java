@@ -21,19 +21,20 @@ public class User implements Serializable {
     private String email;
     private String username;
     private char[] password;
-    private BankAccount account = new BankAccount(0);
+    //private BankAccount account = new BankAccount(0);
+    private String budget = "0";
     
     public User(){
         
     }
 
-    public User(String name, String surname, String email, String username, char[] password) {
+    public User(String name, String surname, String email, String username, char[] password, String budget) {
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.username = username;
         this.password = password;
-      
+        this.budget = budget;
     }
     
     public String getName() {
@@ -76,21 +77,20 @@ public class User implements Serializable {
         this.password = password;
     }    
 
-    public BankAccount getAccount() {
-        return account;
+    public String getBudget() {
+        return budget;
     }
 
-    public void setAccount(BankAccount account) {
-        this.account = account;
+    public void setBudget(String budget) {
+        this.budget = budget;
     }
 
-
-
+  
     @Override
     public String toString() {
         return "User" + "\nname=" + name + "\nsurname=" + surname + "\nemail=" +
                 email + "\nusername=" + username + "\npassword=" + password + 
-                "\nbalance=" + account.getAccountBalance();
+                "\nbalance=" + budget + "\n";
     }
     
     
