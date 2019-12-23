@@ -167,6 +167,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 User currentSessionUser = UserSystem.searchUser(username);
                 userFrame.setWelcome(currentSessionUser);
                 userFrame.setVisible(true);
+                //userFrame.getBalanceLabel().setText(String.valueOf(currentSessionUser.getAccount().getAccountBalance()) + "$");
                 bf.setCurrentSessionUser(currentSessionUser);
             }
             else {
@@ -175,7 +176,11 @@ public class LoginFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_loginButtonActionPerformed
 
+    public UserFrame getUserFrame() {
+        return userFrame;
+    }
 
+    
     private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameFieldActionPerformed
@@ -184,6 +189,8 @@ public class LoginFrame extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        UserSystem.readAllUsersFromFile();
+        VehicleSys.readAllVehiclesFromFile();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

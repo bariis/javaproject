@@ -21,8 +21,8 @@ public class User implements Serializable {
     private String email;
     private String username;
     private char[] password;
-    //private BankAccount account = new BankAccount(0);
-    private String budget = "0";
+    private BankAccount account = new BankAccount(0);
+    //private String budget = "0";
     
     public User(){
         
@@ -34,7 +34,7 @@ public class User implements Serializable {
         this.email = email;
         this.username = username;
         this.password = password;
-        this.budget = budget;
+        //this.budget = budget;
     }
     
     public String getName() {
@@ -77,20 +77,28 @@ public class User implements Serializable {
         this.password = password;
     }    
 
-    public String getBudget() {
-        return budget;
-    }
+    //public String getBudget() {
+    //    return budget;
+    //}
 
-    public void setBudget(String budget) {
-        this.budget = budget;
-    }
+    //public void setBudget(String budget) {
+    //    this.budget = budget;
+    //}
 
   
     @Override
     public String toString() {
         return "User" + "\nname=" + name + "\nsurname=" + surname + "\nemail=" +
                 email + "\nusername=" + username + "\npassword=" + password + 
-                "\nbalance=" + budget + "\n";
+                "\nbalance=" + /*budget+ */ "\n";
+    }
+
+    public BankAccount getAccount() {
+        return account;
+    }
+
+    public void setAccount(BankAccount account) {
+        this.account = account;
     }
     
     

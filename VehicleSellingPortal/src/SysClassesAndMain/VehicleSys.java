@@ -71,8 +71,8 @@ public class VehicleSys {
       public static String displayVehicles() {
         String output = "";
 
-        for (Vehicle vehicle : list) {
-            output += list.toString();
+        for (int i = 0; i < list.size(); i++) {
+            output += list.get(i).toString();
         }
 
         return output;
@@ -88,7 +88,15 @@ public class VehicleSys {
         return null;
     }
        
-       
+       public static Vehicle searchVehicleName(String listingName) {
+        for (Vehicle vehicle : list) {
+            if (vehicle.getName().equalsIgnoreCase(listingName)) {
+                return vehicle;
+            }
+        }
+
+        return null;
+    }
        
     // reads vehicle information from the file 
     public static void readAllVehiclesFromFile(){

@@ -115,7 +115,6 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel34 = new javax.swing.JLabel();
         removeButton = new javax.swing.JButton();
-        modifyButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Vehicle Selling Portal - Admin");
@@ -561,8 +560,6 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
             }
         });
 
-        modifyButton.setText("Modify Vehicle");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -572,10 +569,9 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel34)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(removeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(modifyButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(removeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel28)
@@ -590,14 +586,12 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel34))
                         .addGap(46, 46, 46)
-                        .addComponent(removeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)
-                        .addComponent(modifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(removeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(174, Short.MAX_VALUE))
         );
 
@@ -644,6 +638,8 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
                         topSpeed, engineSize, name, price, date, year, modelName,
                         typeOfCycle));
                     JOptionPane.showMessageDialog(null, "Addition succesful!");
+                    VehicleSys.writeAllVehiclesToFile();
+
             }
             else {
                 JOptionPane.showMessageDialog(null, "Addition unsuccesful, "
@@ -683,6 +679,8 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
                     VehicleSys.addVehicle(new Boat(length, width, flag, engineType,
                         cabinCount, name, price, date, year, modelName, typeOfBoat));
                     JOptionPane.showMessageDialog(null, "Addition succesful!");
+                    VehicleSys.writeAllVehiclesToFile();
+
             }
             else {
                 JOptionPane.showMessageDialog(null, "Addition unsuccesful, "
@@ -722,6 +720,7 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
                     VehicleSys.addVehicle(new Car(horsepower, licensePlate, tireModel,
                         color, topSpeed, name, price, date, year, modelName, typeOfCar));
                     JOptionPane.showMessageDialog(null, "Addition succesful!");
+                    VehicleSys.writeAllVehiclesToFile();
                 }
                 else {
                     JOptionPane.showMessageDialog(null, "Addition unsuccesful, "
@@ -738,6 +737,7 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
     private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
         VehicleSys.removeVehicle(VehicleSys.searchVehicle(Integer.parseInt(jComboBox1.getSelectedItem().toString())));
         JOptionPane.showMessageDialog(null, "Removal successful.");
+        VehicleSys.writeAllVehiclesToFile();
         jComboBox1.setModel(new DefaultComboBoxModel(VehicleSys.getAllVehicleIds()));
         jTextArea1.setText("");
     }//GEN-LAST:event_removeButtonActionPerformed
@@ -874,7 +874,6 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
-    private javax.swing.JButton modifyButton;
     private javax.swing.JButton removeButton;
     // End of variables declaration//GEN-END:variables
 }

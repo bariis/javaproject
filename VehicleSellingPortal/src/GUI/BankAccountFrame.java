@@ -19,7 +19,6 @@ public class BankAccountFrame extends javax.swing.JFrame {
      * Creates new form BankAccountFrame
      */
     
-    UserFrame userFrame = new UserFrame();
     public BankAccountFrame() {
         //this.userFrame = userFrame;
         initComponents();
@@ -43,6 +42,8 @@ public class BankAccountFrame extends javax.swing.JFrame {
         moneyLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Vehicle Selling Portal - Deposit Money");
+        setResizable(false);
 
         depositButton.setText("Deposit");
         depositButton.addActionListener(new java.awt.event.ActionListener() {
@@ -126,18 +127,13 @@ User user;
     }
 
     private void depositButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_depositButtonActionPerformed
-        if(Integer.parseInt(balanceField.getText()) >= 0 && cardField.getText().length() == 19){
-            user.setBudget(balanceField.getText());
-           // userFrame.setUserBudget(user);
-           //userFrame.setUserBudget(balanceField.getText());
-          // userFrame.setBudgetLabel(balanceField.getText());
-            moneyLabel.setText(balanceField.getText());
-            System.out.println(Double.parseDouble(user.getBudget()));
-            userFrame.getBudgetLabel().setText(balanceField.getText());
+        if(Double.parseDouble(balanceField.getText()) >= 0 && cardField.getText().length() == 19){
+            user.getAccount().setAccountBalance(user.getAccount().getAccountBalance()+ Double.parseDouble(balanceField.getText()));
+            moneyLabel.setText(String.valueOf(user.getAccount().getAccountBalance()) + "$");
+            //System.out.println(Double.parseDouble(String.valueOf(user.getAccount().getAccountBalance())));
+            //userFrame.getBudgetLabel().setText(String.valueOf(user.getAccount().getAccountBalance()));
+            //LoginFrame.getUserFrame().getBalanceLabel().setText(String.valueOf(user.getAccount().getAccountBalance()) + "$");
             
-            //user.getAccount().setAccountBalance(user.getAccount().getAccountBalance()
-              //      + Double.parseDouble(balanceField.getText()));
-                //    moneyLabel.setText(balanceField.getText());
             
            // this.setVisible(false);
         } else{
