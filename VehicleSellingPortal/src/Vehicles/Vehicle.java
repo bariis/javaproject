@@ -1,6 +1,8 @@
 
 package Vehicles;
 
+import GUI.LoginFrame;
+import SysClassesAndMain.VehicleSys;
 import java.io.Serializable;
 
 /*
@@ -15,14 +17,14 @@ import java.io.Serializable;
  */
 
 public abstract class Vehicle implements Serializable{
-    protected int listingId = 0;
+    protected int listingId;
     protected String name; 
     protected double price;
     protected String listingDate;
     protected int modelYear;
     protected String model;
     protected String type;
-    protected static int totalVehicles = 0;
+    protected static int totalVehicles;
     
     public Vehicle() {
     }
@@ -99,6 +101,10 @@ public abstract class Vehicle implements Serializable{
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public void setListingId(int listingId) {
+        this.listingId = listingId;
     }
     
      @Override

@@ -9,6 +9,7 @@ import SysClassesAndMain.UserSystem;
 import SysClassesAndMain.VehicleSys;
 import Users.User;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -146,10 +147,10 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_registerButtonActionPerformed
     public static BankAccountFrame bf = new BankAccountFrame();
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-         String username = usernameField.getText();
+        String username = usernameField.getText();
         String passText = new String(pwField.getPassword());
         if(username.equalsIgnoreCase("admin") && 
-                passText.equalsIgnoreCase("admin") && adminBox.isSelected()){
+            passText.equalsIgnoreCase("admin") && adminBox.isSelected()){
             // Show the admin frame
             AdminAddVehicleFrame adminVehicleFrame = new AdminAddVehicleFrame();
             adminVehicleFrame.setVisible(true);

@@ -29,7 +29,7 @@ import java.util.logging.Logger;
  */
 public class VehicleSys {
     private static ArrayList<Vehicle> list = new ArrayList<Vehicle>();
-    
+    private static int lastUsedId;
 
     // this method only checks if the object that will be added is already in 
     // the list, according to the name of the object
@@ -134,6 +134,14 @@ public class VehicleSys {
 
     public static ArrayList<Vehicle> getList() {
         return list;
+    }
+
+    public static int getLastUsedId() {
+        return lastUsedId;
+    }
+
+    public static void setLastUsedId(int lastUsedId) {
+        VehicleSys.lastUsedId = lastUsedId;
     }
     
     

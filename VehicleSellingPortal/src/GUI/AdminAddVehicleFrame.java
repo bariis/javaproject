@@ -743,10 +743,9 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_removeButtonActionPerformed
 
     private void jTabbedPane2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTabbedPane2FocusGained
-       jComboBox1.setModel(new DefaultComboBoxModel(VehicleSys.getAllVehicleIds()));
+        jComboBox1.setModel(new DefaultComboBoxModel(VehicleSys.getAllVehicleIds()));
 
-        // BURADA YİNE HATA VERIYOR AMINAKOYİM. 
-//       jTextArea1.setText(VehicleSys.searchVehicle(VehicleSys.getList().get(0).getListingId()).toString());
+        //jTextArea1.setText(VehicleSys.searchVehicle(VehicleSys.getList().get(0).getListingId()).toString());
     }//GEN-LAST:event_jTabbedPane2FocusGained
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
