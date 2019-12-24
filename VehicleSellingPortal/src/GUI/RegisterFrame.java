@@ -6,7 +6,7 @@
 
 package GUI;
 
-import SysClasses.UserSystem;
+import SysClassesAndMain.UserSystem;
 import Users.User;
 import javax.swing.JOptionPane;
 
@@ -48,6 +48,8 @@ public class RegisterFrame extends javax.swing.JFrame {
         confirmPwField = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Vehicle Selling Portal - Register");
+        setResizable(false);
 
         jLabel1.setText("Name:");
 
@@ -180,8 +182,10 @@ public class RegisterFrame extends javax.swing.JFrame {
                     String username = usernameField.getText();
                     char[] password = pwField.getPassword();
                     String email = emailField.getText();
-                    User user = new User(name, surname, email, username, password);
-                    UserSystem.usersList.add(user);
+                    User user = new User(name, surname, email, username, password, "0");
+                    UserSystem.addUser(user);
+                    UserSystem.writeAllUsersToFile();
+                    
                     
                     JOptionPane.showMessageDialog(null, "Registration successful. You can login now.");
                     

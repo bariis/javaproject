@@ -5,7 +5,13 @@
  */
 package GUI;
 
+import SysClassesAndMain.UserSystem;
+import SysClassesAndMain.VehicleSys;
+import Users.User;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -14,9 +20,12 @@ import javax.swing.JOptionPane;
 public class LoginFrame extends javax.swing.JFrame {
 
     RegisterFrame regFrame = new RegisterFrame();
+    UserFrame userFrame = new UserFrame();
+            
     
     
     public LoginFrame() {
+       
         initComponents();
     }
 
@@ -36,20 +45,25 @@ public class LoginFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         loginButton = new javax.swing.JButton();
         registerButton = new javax.swing.JButton();
+        adminBox = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Vehicle Selling Portal - Login");
+        setLocation(new java.awt.Point(400, 400));
         setResizable(false);
 
         jLabel1.setText("Username:");
 
         jLabel2.setText("Password:");
 
-        usernameField.setToolTipText("");
+        usernameField.setToolTipText("Enter the username here");
         usernameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameFieldActionPerformed(evt);
             }
         });
+
+        pwField.setToolTipText("Enter the password here");
 
         jLabel3.setFont(new java.awt.Font("Bernard MT Condensed", 1, 48)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -69,6 +83,8 @@ public class LoginFrame extends javax.swing.JFrame {
                 registerButtonActionPerformed(evt);
             }
         });
+
+        adminBox.setText("Administrator");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,6 +112,8 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addComponent(loginButton)
                 .addGap(18, 18, 18)
                 .addComponent(registerButton)
+                .addGap(18, 18, 18)
+                .addComponent(adminBox)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -114,7 +132,8 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(loginButton)
-                    .addComponent(registerButton))
+                    .addComponent(registerButton)
+                    .addComponent(adminBox))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -126,25 +145,43 @@ public class LoginFrame extends javax.swing.JFrame {
         regFrame.setVisible(true);
         
     }//GEN-LAST:event_registerButtonActionPerformed
-
+    public static BankAccountFrame bf = new BankAccountFrame();
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-
+        String username = usernameField.getText();
         String passText = new String(pwField.getPassword());
-        if(usernameField.getText().equalsIgnoreCase("admin") && 
-                passText.equalsIgnoreCase("admin")){
+        if(username.equalsIgnoreCase("admin") && 
+            passText.equalsIgnoreCase("admin") && adminBox.isSelected()){
             // Show the admin frame
             AdminAddVehicleFrame adminVehicleFrame = new AdminAddVehicleFrame();
             adminVehicleFrame.setVisible(true);
+            if(!VehicleSys.getList().isEmpty()){
+                adminVehicleFrame.getjComboBox1().setModel(new DefaultComboBoxModel(VehicleSys.getAllVehicleIds()));
+                adminVehicleFrame.setjTextArea1(VehicleSys.searchVehicle(Integer.parseInt(VehicleSys.getAllVehicleIds()[0])).toString());
+            }
         }
-        else if(usernameField.getText().isEmpty() || passText.isEmpty()) {
+        else if(username.isEmpty() || passText.isEmpty()) {
             // Issue to fix - doesn't work when only 1 entered
             JOptionPane.showMessageDialog(null, "Please fill in all the fields!");
         }
         else {
-            // Show the user frame
+            if(UserSystem.checkUserPassCombo(username, passText)){
+                User currentSessionUser = UserSystem.searchUser(username);
+                userFrame.setWelcome(currentSessionUser);
+                userFrame.setVisible(true);
+                //userFrame.getBalanceLabel().setText(String.valueOf(currentSessionUser.getAccount().getAccountBalance()) + "$");
+                bf.setCurrentSessionUser(currentSessionUser);
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "Wrong username/password combination");
+            }
         }
     }//GEN-LAST:event_loginButtonActionPerformed
 
+    public UserFrame getUserFrame() {
+        return userFrame;
+    }
+
+    
     private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameFieldActionPerformed
@@ -153,6 +190,8 @@ public class LoginFrame extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        UserSystem.readAllUsersFromFile();
+        VehicleSys.readAllVehiclesFromFile();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -185,6 +224,7 @@ public class LoginFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox adminBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

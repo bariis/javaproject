@@ -1,6 +1,10 @@
 
 package Vehicles;
 
+import GUI.LoginFrame;
+import SysClassesAndMain.VehicleSys;
+import java.io.Serializable;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,14 +16,15 @@ package Vehicles;
  * @author brktrksvr
  */
 
-public abstract class Vehicle {
-    protected int listingId = 0;
+public abstract class Vehicle implements Serializable{
+    protected int listingId;
     protected String name; 
     protected double price;
     protected String listingDate;
     protected int modelYear;
     protected String model;
     protected String type;
+    protected static int totalVehicles;
     
     public Vehicle() {
     }
@@ -31,7 +36,8 @@ public abstract class Vehicle {
         this.modelYear = modelYear;
         this.model = model;
         this.type = type;
-        listingId++;
+        totalVehicles++;
+        listingId = totalVehicles;
     }
     
     //abstract method. car and motorcycle will treat differently.
@@ -81,10 +87,33 @@ public abstract class Vehicle {
         this.model = model;
     }
 
-    @Override
+    public static int getTotalVehicles() {
+        return totalVehicles;
+    }
+
+    public static void setTotalVehicles(int totalVehicles) {
+        Vehicle.totalVehicles = totalVehicles;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setListingId(int listingId) {
+        this.listingId = listingId;
+    }
+    
+     @Override
     // toString will most likely not be used
     public String toString() {
-        return "\n" + name + "\n" + price + "$" + "\n" + listingDate + "\n" + modelYear +
-                "\n" + model + "\n" + type;
+        return "\nListing Name: " + name + "\nListing Price: " + price + "$" + 
+                "\nListing Date: " + listingDate + "\nModel Year: " + modelYear +
+                "\nModel Name: " + model + "\nType: " + type;
     }
+    
+    
 }
