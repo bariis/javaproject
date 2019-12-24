@@ -8,6 +8,8 @@ package GUI;
 import SysClassesAndMain.UserSystem;
 import SysClassesAndMain.VehicleSys;
 import Users.User;
+import com.sun.glass.events.KeyEvent;
+import java.awt.Button;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
@@ -57,9 +59,9 @@ public class LoginFrame extends javax.swing.JFrame {
         jLabel2.setText("Password:");
 
         usernameField.setToolTipText("Enter the username here");
-        usernameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameFieldActionPerformed(evt);
+        usernameField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                escapeKeyPressed(evt);
             }
         });
 
@@ -182,9 +184,12 @@ public class LoginFrame extends javax.swing.JFrame {
     }
 
     
-    private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
+    private void escapeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_escapeKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameFieldActionPerformed
+        if(evt.getKeyCode() == KeyEvent.VK_ESCAPE){
+            dispose();
+        }
+    }//GEN-LAST:event_escapeKeyPressed
 
     /**
      * @param args the command line arguments
@@ -222,7 +227,6 @@ public class LoginFrame extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox adminBox;
     private javax.swing.JLabel jLabel1;
