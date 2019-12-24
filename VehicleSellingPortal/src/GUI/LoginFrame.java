@@ -14,16 +14,19 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.time.format.DateTimeFormatter;  
+import java.time.LocalDateTime;    
+import java.time.format.DateTimeFormatterBuilder;
 
-/**
- *
- * @author zer0
- */
+//
+// @author Burak Turksever & Baris Ertas
+// 
+
 public class LoginFrame extends javax.swing.JFrame {
 
     RegisterFrame regFrame = new RegisterFrame();
     UserFrame userFrame = new UserFrame();
-            
+    boolean dateShowing = false; 
     
     
     public LoginFrame() {
@@ -48,11 +51,17 @@ public class LoginFrame extends javax.swing.JFrame {
         loginButton = new javax.swing.JButton();
         registerButton = new javax.swing.JButton();
         adminBox = new javax.swing.JCheckBox();
+        timeLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Vehicle Selling Portal - Login");
         setLocation(new java.awt.Point(400, 400));
         setResizable(false);
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mouseClickedOnForm(evt);
+            }
+        });
 
         jLabel1.setText("Username:");
 
@@ -108,15 +117,16 @@ public class LoginFrame extends javax.swing.JFrame {
                         .addGap(9, 9, 9))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(165, 165, 165)
-                .addComponent(loginButton)
-                .addGap(18, 18, 18)
-                .addComponent(registerButton)
-                .addGap(18, 18, 18)
-                .addComponent(adminBox)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(timeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(loginButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(registerButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(adminBox)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,11 +141,15 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pwField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(loginButton)
-                    .addComponent(registerButton)
-                    .addComponent(adminBox))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(loginButton)
+                        .addComponent(registerButton)
+                        .addComponent(adminBox))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(timeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -187,9 +201,23 @@ public class LoginFrame extends javax.swing.JFrame {
     private void escapeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_escapeKeyPressed
         // TODO add your handling code here:
         if(evt.getKeyCode() == KeyEvent.VK_ESCAPE){
-            dispose();
+            System.exit(0);
+            return;
         }
     }//GEN-LAST:event_escapeKeyPressed
+
+    private void mouseClickedOnForm(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseClickedOnForm
+        if(!dateShowing){
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/YYYY");
+            LocalDateTime now = LocalDateTime.now();
+            timeLabel.setText(dtf.format(now));
+            dateShowing = true;
+        }
+        else{
+            timeLabel.setText("");
+            dateShowing = false;
+        }
+    }//GEN-LAST:event_mouseClickedOnForm
 
     /**
      * @param args the command line arguments
@@ -235,6 +263,7 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JButton loginButton;
     private javax.swing.JPasswordField pwField;
     private javax.swing.JButton registerButton;
+    private javax.swing.JLabel timeLabel;
     private javax.swing.JTextField usernameField;
     // End of variables declaration//GEN-END:variables
 }

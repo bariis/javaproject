@@ -9,10 +9,6 @@ package Users;
 import UserHasA.BankAccount;
 import java.io.Serializable;
 
-/**
- *
- * @author barisertas
- */
 public class User implements Serializable {
     
     

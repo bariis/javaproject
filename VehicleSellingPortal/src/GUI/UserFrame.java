@@ -13,10 +13,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author zer0
- */
 public class UserFrame extends javax.swing.JFrame {
 
     /**
@@ -96,6 +92,7 @@ public class UserFrame extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(noRadio);
         noRadio.setText("No");
 
         buyButton.setText("Buy");

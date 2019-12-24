@@ -17,16 +17,7 @@ import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author zer0
- */
 public class VehicleSys {
     private static ArrayList<Vehicle> list = new ArrayList<Vehicle>();
 
@@ -44,7 +35,12 @@ public class VehicleSys {
     
     public static boolean addVehicle(Vehicle obj){
         if(!checkList(obj.getName())){
-            obj.setListingId(list.get(list.size()-1).getListingId() + 1);
+            if(!list.isEmpty()){
+                obj.setListingId(list.get(list.size()-1).getListingId() + 1);
+            }
+            else{
+                obj.setListingId(1);
+            }
             list.add(obj);
             return true;
         }

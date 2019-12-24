@@ -5,16 +5,6 @@ import GUI.LoginFrame;
 import SysClassesAndMain.VehicleSys;
 import java.io.Serializable;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author brktrksvr
- */
 
 public abstract class Vehicle implements Serializable{
     protected int listingId;

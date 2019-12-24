@@ -15,10 +15,7 @@ import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
-/**
- *
- * @author barisertas
- */
+
 public class AdminAddVehicleFrame extends javax.swing.JFrame {
 
     /**
@@ -718,7 +715,7 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
                 double topSpeed = Double.parseDouble(jTextField11.getText());
                 if(!VehicleSys.checkList(name)){
                     VehicleSys.addVehicle(new Car(horsepower, licensePlate, tireModel,
-                        color, topSpeed, name, price, date, year, modelName, typeOfCar));
+                            color, topSpeed, name, price, date, year, modelName, typeOfCar));
                     JOptionPane.showMessageDialog(null, "Addition succesful!");
                     VehicleSys.writeAllVehiclesToFile();
                 }
@@ -730,16 +727,22 @@ public class AdminAddVehicleFrame extends javax.swing.JFrame {
         catch(Exception ex){
             JOptionPane.showMessageDialog(null, "Variable type mismatch error. "
                 + ex.getMessage());
+            System.out.println(ex.getCause());
         }
         }
     }//GEN-LAST:event_addCarButtonActionPerformed
 
     private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
-        VehicleSys.removeVehicle(VehicleSys.searchVehicle(Integer.parseInt(jComboBox1.getSelectedItem().toString())));
-        JOptionPane.showMessageDialog(null, "Removal successful.");
-        VehicleSys.writeAllVehiclesToFile();
-        jComboBox1.setModel(new DefaultComboBoxModel(VehicleSys.getAllVehicleIds()));
-        jTextArea1.setText("");
+        if(jComboBox1.getItemCount() == 0){
+            JOptionPane.showMessageDialog(null, "The Vehicle list is empty!");
+        }
+        else{
+            VehicleSys.removeVehicle(VehicleSys.searchVehicle(Integer.parseInt(jComboBox1.getSelectedItem().toString())));
+            JOptionPane.showMessageDialog(null, "Removal successful.");
+            VehicleSys.writeAllVehiclesToFile();
+            jComboBox1.setModel(new DefaultComboBoxModel(VehicleSys.getAllVehicleIds()));
+            jTextArea1.setText("");
+        }
     }//GEN-LAST:event_removeButtonActionPerformed
 
     private void jTabbedPane2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTabbedPane2FocusGained

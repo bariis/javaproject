@@ -10,10 +10,7 @@ import SysClassesAndMain.UserSystem;
 import Users.User;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author barisertas
- */
+
 public class RegisterFrame extends javax.swing.JFrame {
     /**
      * Creates new form RegisterFrame

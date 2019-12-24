@@ -18,13 +18,10 @@ import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author barisertas
- */
+
 public class UserSystem {
     
-    public static ArrayList<User> usersList = new ArrayList<User>();
+    // public static ArrayList<User> usersList = new ArrayList<User>();
     public static HashSet<User> userSet = new HashSet<User>();
     
     // checks if username already exist or not
@@ -95,7 +92,7 @@ public class UserSystem {
             }
         } catch (IOException ex) {
             Logger.getLogger(UserSystem.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("HATA 1");
+            System.out.println("User read IO exception " + ex.getMessage());
         }
     }
     
@@ -106,7 +103,7 @@ public class UserSystem {
             os.writeObject(userSet);
         } catch (IOException ex) {
             Logger.getLogger(UserSystem.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("HATA 2");
+            System.out.println("User write IO exception " + ex.getMessage());
         }
         
     }
